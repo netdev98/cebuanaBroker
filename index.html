@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cebuana Broker - Your trusted Real Estate Broker and Appraiser in Cebu. Find your dream home, condo, lot, or commercial property. Licensed PRC Real Estate Broker serving Cebu and nationwide.">
+<meta name="keywords" content="Cebu real estate, Cebuana broker, property for sale Cebu, condo for sale Cebu, house and lot Cebu, real estate appraiser Cebu, PRC broker Cebu">
+<meta property="og:title" content="Cebuana Broker | Real Estate Broker & Appraiser – Cebu">
+<meta property="og:description" content="Find your dream property in Cebu with a trusted PRC-licensed broker and appraiser.">
+<meta property="og:type" content="website">
+<title>Cebuana Broker | Real Estate Broker & Appraiser – Cebu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A84C;
+  --gold-light:#F0D98A;
+  --gold-dark:#8A6B28;
+  --navy:#0D1B2A;
+  --navy-mid:#1C2F45;
+  --navy-soft:#2A4260;
+  --cream:#FAF7F2;
+  --cream-dark:#F0EAE0;
+  --text:#1A1A1A;
+  --text-mid:#4A4A4A;
+  --text-muted:#7A7A7A;
+  --white:#FFFFFF;
+  --border:#E5DDD0;
+  --success:#2E7D52;
+  --shadow:0 4px 24px rgba(13,27,42,0.10);
+  --shadow-hover:0 12px 40px rgba(13,27,42,0.18);
+  --radius:12px;
+  --radius-lg:20px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;overflow-x:hidden}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--cream-dark)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;background:rgba(13,27,42,0.96);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(201,168,76,0.25)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--navy);font-weight:700;font-family:'Playfair Display',serif}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-text span:first-child{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold)}
+.nav-logo-text span:last-child{font-size:10px;color:rgba(255,255,255,0.55);letter-spacing:1.5px;text-transform:uppercase}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,0.80);font-size:13.5px;font-weight:500;letter-spacing:0.3px;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:500;transition:all .25s;text-decoration:none;white-space:nowrap}
+.btn-outline{background:transparent;border:1.5px solid var(--gold);color:var(--gold);padding:8px 18px;border-radius:8px;font-size:13px}
+.btn-outline:hover{background:var(--gold);color:var(--navy)}
+.btn-gold{background:var(--gold);color:var(--navy);padding:10px 22px;border-radius:8px;font-size:13px;font-weight:600}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,0.35)}
+.btn-primary{background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:10px;font-size:15px;font-weight:600}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.4)}
+.btn-secondary{background:transparent;border:2px solid var(--white);color:var(--white);padding:14px 32px;border-radius:10px;font-size:15px;font-weight:500}
+.btn-secondary:hover{background:rgba(255,255,255,0.12);transform:translateY(-2px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:1px;transition:.3s}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 50%,#1a3050 100%);position:relative;display:flex;align-items:center;padding:120px 5% 80px;overflow:hidden}
+.hero-bg-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(201,168,76,1) 30px,rgba(201,168,76,1) 31px)}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.hero-orb-1{width:500px;height:500px;background:rgba(201,168,76,0.12);top:-100px;right:-100px}
+.hero-orb-2{width:300px;height:300px;background:rgba(42,66,96,0.5);bottom:0;left:-50px}
+.hero-content{position:relative;z-index:2;max-width:680px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.35);color:var(--gold);padding:7px 16px;border-radius:50px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:28px}
+.hero-badge::before{content:'';width:7px;height:7px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,62px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:20px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{font-size:17px;color:rgba(255,255,255,0.70);line-height:1.8;margin-bottom:36px;max-width:520px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.hero-stats{display:flex;gap:40px;border-top:1px solid rgba(255,255,255,0.12);padding-top:36px}
+.hero-stat{display:flex;flex-direction:column}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)}
+.hero-stat-label{font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.5px;margin-top:2px}
+.hero-cards{position:absolute;right:5%;bottom:60px;display:flex;flex-direction:column;gap:14px;z-index:2}
+.hero-float-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;color:var(--white);min-width:220px}
+.hero-float-card-icon{width:38px;height:38px;background:var(--gold);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.hero-float-card-text span{display:block}
+.hero-float-card-text span:first-child{font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:0.5px}
+.hero-float-card-text span:last-child{font-size:14px;font-weight:600;margin-top:1px}
+
+/* SEARCH BAR */
+.search-section{background:var(--white);padding:32px 5%;box-shadow:0 4px 20px rgba(13,27,42,0.08);position:relative;z-index:10}
+.search-bar{display:flex;gap:0;border:2px solid var(--border);border-radius:14px;overflow:hidden;background:var(--white);max-width:960px;margin:0 auto;box-shadow:var(--shadow)}
+.search-select,.search-input{border:none;outline:none;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:transparent;padding:14px 18px}
+.search-select{min-width:140px;border-right:1.5px solid var(--border);color:var(--text-mid);cursor:pointer}
+.search-input{flex:1}
+.search-input::placeholder{color:var(--text-muted)}
+.search-btn{background:var(--gold);color:var(--navy);border:none;padding:0 28px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;letter-spacing:0.3px;display:flex;align-items:center;gap:8px}
+.search-btn:hover{background:var(--gold-dark);color:var(--white)}
+.search-filters{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap;max-width:960px;margin:16px auto 0}
+.filter-tag{background:var(--cream);border:1.5px solid var(--border);color:var(--text-mid);padding:6px 16px;border-radius:50px;font-size:12.5px;font-weight:500;cursor:pointer;transition:.2s;text-decoration:none}
+.filter-tag:hover,.filter-tag.active{background:var(--navy);border-color:var(--navy);color:var(--white)}
+
+/* SECTIONS */
+section{padding:80px 5%}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:14px}
+.section-sub{font-size:16px;color:var(--text-mid);max-width:560px;line-height:1.75}
+.section-header{margin-bottom:48px}
+.section-header.centered{text-align:center}
+.section-header.centered .section-sub{margin:0 auto}
+
+/* PROPERTIES */
+#properties{background:var(--cream)}
+.properties-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+.property-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:transform .35s ease,box-shadow .35s ease;cursor:pointer;position:relative}
+.property-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:var(--shadow-hover)}
+.property-img-wrap{position:relative;height:220px;overflow:hidden}
+.property-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.property-card:hover .property-img-wrap img{transform:scale(1.10)}
+.property-badge{position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
+.badge-sale{background:var(--gold);color:var(--navy)}
+.badge-rent{background:var(--navy);color:var(--gold)}
+.badge-pre{background:#5C3D9E;color:#E9D5FF}
+.badge-sold{background:#D1FAE5;color:#065F46}
+.property-fav{position:absolute;top:14px;right:14px;width:34px;height:34px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;border:none;font-size:14px}
+.property-fav:hover{background:var(--white);color:#e53935}
+.property-fav.active{color:#e53935}
+.property-body{padding:20px}
+.property-type{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.property-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.3}
+.property-loc{font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:5px;margin-bottom:14px}
+.property-price{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:16px;font-family:'Playfair Display',serif}
+.property-price span{font-size:12px;font-weight:400;color:var(--text-muted);font-family:'Inter',sans-serif}
+.property-features{display:flex;gap:14px;padding-top:14px;border-top:1px solid var(--border)}
+.prop-feat{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-mid);font-weight:500}
+.prop-feat svg{width:15px;height:15px;flex-shrink:0;color:var(--gold)}
+
+/* SERVICES */
+#services{background:var(--white)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
+.service-card{background:var(--cream);border-radius:var(--radius-lg);padding:32px 28px;transition:.3s;border:1.5px solid transparent}
+.service-card:hover{background:var(--white);border-color:var(--gold);box-shadow:var(--shadow)}
+.service-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--navy),var(--navy-soft));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+.service-card h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.service-card p{font-size:14px;color:var(--text-mid);line-height:1.75}
+
+/* ABOUT */
+#about{background:var(--navy);position:relative;overflow:hidden}
+#about::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:linear-gradient(135deg,transparent,rgba(201,168,76,0.06));pointer-events:none}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img-frame{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,var(--navy-soft),var(--navy-mid));border-radius:24px;overflow:hidden;position:relative}
+.about-img-frame img{width:100%;height:100%;object-fit:cover}
+.about-accent-card{position:absolute;bottom:-24px;right:-24px;background:var(--gold);border-radius:16px;padding:20px 24px;box-shadow:0 8px 32px rgba(201,168,76,0.3)}
+.about-accent-card .big-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--navy);line-height:1}
+.about-accent-card .small-label{font-size:12px;font-weight:600;color:var(--navy-soft);margin-top:4px;letter-spacing:0.5px}
+.about-content .section-label{color:var(--gold)}
+.about-content .section-title{color:var(--white)}
+.about-content p{color:rgba(255,255,255,0.72);font-size:15.5px;line-height:1.85;margin-bottom:18px}
+.about-list{list-style:none;margin:24px 0;display:flex;flex-direction:column;gap:12px}
+.about-list li{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.80);font-size:14.5px}
+.about-list li::before{content:'✓';width:24px;height:24px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:11px;font-weight:700;flex-shrink:0}
+.license-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px 20px;margin-top:24px}
+.license-badge span:first-child{font-size:22px}
+.license-badge div{display:flex;flex-direction:column}
+.license-badge div span:first-child{font-size:12px;color:rgba(255,255,255,0.5)}
+.license-badge div span:last-child{font-size:13px;font-weight:600;color:var(--white)}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--cream)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.testi-card{background:var(--white);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow);border:1.5px solid var(--border);transition:.3s}
+.testi-card:hover{border-color:var(--gold);box-shadow:var(--shadow-hover)}
+.testi-stars{color:var(--gold);font-size:15px;margin-bottom:14px;letter-spacing:2px}
+.testi-text{font-size:14.5px;color:var(--text-mid);line-height:1.8;margin-bottom:20px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;color:var(--navy);font-family:'Playfair Display',serif;flex-shrink:0}
+.testi-name{font-weight:600;font-size:14px;color:var(--navy)}
+.testi-role{font-size:12px;color:var(--text-muted);margin-top:1px}
+
+/* CONTACT */
+#contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
+.contact-info .section-sub{margin-bottom:36px}
+.contact-detail{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
+.contact-icon{width:46px;height:46px;background:var(--cream);border:1.5px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.contact-detail h4{font-size:13px;font-weight:600;color:var(--navy);letter-spacing:0.5px;margin-bottom:4px;text-transform:uppercase}
+.contact-detail p,.contact-detail a{font-size:15px;color:var(--text-mid);text-decoration:none;transition:.2s}
+.contact-detail a:hover{color:var(--gold)}
+.contact-form{background:var(--cream);border-radius:var(--radius-lg);padding:40px;border:1.5px solid var(--border)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.form-group label{font-size:12.5px;font-weight:600;color:var(--navy);letter-spacing:0.5px;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{border:1.5px solid var(--border);border-radius:10px;padding:12px 16px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:var(--white);outline:none;transition:.2s;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,0.12)}
+.form-group textarea{min-height:110px}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:56px 5% 32px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand p{font-size:14px;line-height:1.8;margin:14px 0 20px}
+.footer-social{display:flex;gap:10px}
+.social-btn{width:36px;height:36px;background:rgba(255,255,255,0.07);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;transition:.2s;text-decoration:none;color:rgba(255,255,255,0.7)}
+.social-btn:hover{background:var(--gold);color:var(--navy)}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:13.5px;transition:.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.10);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:rgba(255,255,255,0.40)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(13,27,42,0.80);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);border-radius:24px;overflow:hidden;max-width:860px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:modalIn .3s ease}
+@keyframes modalIn{from{transform:scale(.93) translateY(20px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;background:rgba(255,255,255,0.9);border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;font-size:16px;color:var(--navy);transition:.2s;line-height:1}
+.modal-close:hover{background:var(--navy);color:var(--white)}
+.modal-gallery{height:320px;background:var(--navy-soft);position:relative;overflow:hidden}
+.modal-gallery img{width:100%;height:100%;object-fit:cover}
+.modal-gallery-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,27,42,0.7));padding:24px}
+.modal-badge-row{display:flex;gap:8px}
+.modal-body{padding:32px}
+.modal-price-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}
+.modal-price{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--navy)}
+.modal-price span{font-size:14px;font-weight:400;color:var(--text-muted);font-family:'Inter',sans-serif}
+.modal-fav-btn{width:44px;height:44px;border:1.5px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:.2s;background:var(--white)}
+.modal-fav-btn:hover{border-color:var(--gold);color:#e53935}
+.modal-features{display:flex;gap:24px;background:var(--cream);border-radius:12px;padding:18px 24px;margin-bottom:28px;flex-wrap:wrap}
+.modal-feat{display:flex;flex-direction:column;align-items:center;gap:4px}
+.modal-feat .feat-num{font-size:18px;font-weight:700;color:var(--navy);font-family:'Playfair Display',serif}
+.modal-feat .feat-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+.modal-desc{font-size:14.5px;color:var(--text-mid);line-height:1.85;margin-bottom:28px}
+.modal-amenities{margin-bottom:28px}
+.modal-amenities h4{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:14px}
+.amenities-list{display:flex;flex-wrap:wrap;gap:10px}
+.amenity-pill{background:var(--cream);border:1.5px solid var(--border);border-radius:50px;padding:6px 14px;font-size:12.5px;color:var(--text-mid);font-weight:500;display:flex;align-items:center;gap:6px}
+.modal-cta{display:flex;gap:12px;flex-wrap:wrap}
+.modal-cta .btn{flex:1;min-width:160px;justify-content:center;padding:14px 20px;border-radius:12px;font-size:14px}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--navy-soft);transform:translateY(-1px)}
+
+/* LOGIN MODAL */
+.auth-modal{background:var(--white);border-radius:24px;max-width:440px;width:100%;position:relative;animation:modalIn .3s ease;overflow:hidden}
+.auth-header{background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:36px 36px 28px;text-align:center}
+.auth-header .auth-logo{width:52px;height:52px;background:var(--gold);border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin:0 auto 16px}
+.auth-header h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--white)}
+.auth-header p{font-size:13px;color:rgba(255,255,255,0.55);margin-top:6px}
+.auth-body{padding:32px 36px 36px}
+.auth-tabs{display:flex;gap:0;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:26px}
+.auth-tab{flex:1;padding:10px;text-align:center;cursor:pointer;font-size:13.5px;font-weight:600;transition:.2s;background:transparent;border:none;font-family:'Inter',sans-serif;color:var(--text-muted)}
+.auth-tab.active{background:var(--navy);color:var(--white)}
+.auth-forgot{font-size:12px;color:var(--gold);text-decoration:none;display:block;text-align:right;margin-top:-10px;margin-bottom:20px}
+.auth-divider{display:flex;align-items:center;gap:14px;margin:20px 0;color:var(--text-muted);font-size:12px}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.auth-social{display:flex;gap:12px}
+.auth-social-btn{flex:1;padding:10px;border:1.5px solid var(--border);border-radius:10px;background:var(--white);cursor:pointer;font-size:13px;font-family:'Inter',sans-serif;font-weight:500;color:var(--text);transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.auth-social-btn:hover{border-color:var(--gold);background:var(--cream)}
+
+/* TOAST */
+.toast{position:fixed;bottom:28px;right:28px;background:var(--navy);color:var(--white);padding:14px 22px;border-radius:12px;font-size:14px;font-weight:500;box-shadow:0 8px 32px rgba(13,27,42,0.25);z-index:3000;display:flex;align-items:center;gap:10px;transform:translateY(80px);opacity:0;transition:.4s cubic-bezier(.34,1.56,.64,1);max-width:300px}
+.toast.show{transform:translateY(0);opacity:1}
+.toast-icon{width:28px;height:28px;background:var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+
+/* BACK TO TOP */
+.back-top{position:fixed;bottom:28px;left:28px;width:44px;height:44px;background:var(--gold);color:var(--navy);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:500;box-shadow:0 4px 16px rgba(201,168,76,0.4);opacity:0;transform:translateY(20px);transition:.3s;border:none;font-size:18px}
+.back-top.show{opacity:1;transform:translateY(0)}
+
+/* MOBILE NAV */
+.mobile-menu{position:fixed;top:70px;left:0;right:0;background:var(--navy);z-index:999;padding:24px 5%;display:none;flex-direction:column;gap:16px;border-bottom:1px solid rgba(201,168,76,0.2)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:rgba(255,255,255,0.80);text-decoration:none;font-size:15px;font-weight:500;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07)}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu-actions{display:flex;gap:12px;padding-top:8px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .about-img-wrap{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .hero-cards{display:none}
+}
+@media(max-width:768px){
+  .nav-links,.nav-actions{display:none}
+  .hamburger{display:flex}
+  .hero{padding:100px 5% 60px}
+  .hero-stats{gap:28px}
+  .search-bar{flex-direction:column;border-radius:0}
+  .search-select{border-right:none;border-bottom:1.5px solid var(--border)}
+  .search-btn{padding:16px;justify-content:center}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .modal-body{padding:20px}
+  .modal-price-row{flex-direction:column;gap:12px}
+  .modal-features{gap:16px}
+  .about-accent-card{bottom:-14px;right:-10px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo" aria-label="Cebuana Broker">
+    <div class="nav-logo-icon">CB</div>
+    <div class="nav-logo-text">
+      <span>Cebuana Broker</span>
+      <span>Real Estate · Appraisal</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn btn-outline" onclick="openAuth()">Sign In</button>
+    <a href="#contact" class="btn btn-gold">Inquire Now</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#properties" onclick="closeMenu()">Properties</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#testimonials" onclick="closeMenu()">Clients</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <div class="mobile-menu-actions">
+    <button class="btn btn-outline" onclick="openAuth();closeMenu()">Sign In</button>
+    <a href="#contact" class="btn btn-gold" onclick="closeMenu()">Inquire Now</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🏆 PRC Licensed Broker & Appraiser</div>
+    <h1>Find Your <em>Dream</em><br>Property in Cebu</h1>
+    <p>Your trusted real estate partner for buying, selling, and property valuation across Cebu City, Mandaue, Lapu-Lapu, and Metro Cebu. Personalized service, honest advice, excellent results.</p>
+    <div class="hero-cta">
+      <a href="#properties" class="btn btn-primary">View Properties</a>
+      <a href="#contact" class="btn btn-secondary">Free Consultation</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">120+</span>
+        <span class="hero-stat-label">Properties Sold</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">8+</span>
+        <span class="hero-stat-label">Years Experience</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">98%</span>
+        <span class="hero-stat-label">Client Satisfaction</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-cards">
+    <div class="hero-float-card">
+      <div class="hero-float-card-icon">🏡</div>
+      <div class="hero-float-card-text">
+        <span>Latest Listing</span>
+        <span>3BR House – Banilad</span>
+      </div>
+    </div>
+    <div class="hero-float-card">
+      <div class="hero-float-card-icon">🏆</div>
+      <div class="hero-float-card-text">
+        <span>Achievement</span>
+        <span>Top Seller 2023–2024</span>
+      </div>
+    </div>
+    <div class="hero-float-card">
+      <div class="hero-float-card-icon">📋</div>
+      <div class="hero-float-card-text">
+        <span>PRC License No.</span>
+        <span>REB-0012345</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<div class="search-section">
+  <div class="search-bar" role="search">
+    <select class="search-select" aria-label="Property type">
+      <option value="">All Types</option>
+      <option>House &amp; Lot</option>
+      <option>Condominium</option>
+      <option>Lot Only</option>
+      <option>Commercial</option>
+      <option>Townhouse</option>
+    </select>
+    <input class="search-input" type="text" placeholder="Search location, project name, or developer…" aria-label="Search properties">
+    <button class="search-btn" onclick="showToast('🔍 Searching properties…')">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      Search
+    </button>
+  </div>
+  <div class="search-filters">
+    <a href="#" class="filter-tag active" onclick="filterProp(event,'all')">All</a>
+    <a href="#" class="filter-tag" onclick="filterProp(event,'sale')">For Sale</a>
+    <a href="#" class="filter-tag" onclick="filterProp(event,'rent')">For Rent</a>
+    <a href="#" class="filter-tag" onclick="filterProp(event,'pre')">Pre-Selling</a>
+    <a href="#" class="filter-tag" onclick="filterProp(event,'house')">House &amp; Lot</a>
+    <a href="#" class="filter-tag" onclick="filterProp(event,'condo')">Condo</a>
+    <a href="#" class="filter-tag" onclick="filterProp(event,'lot')">Lot</a>
+    <a href="#" class="filter-tag" onclick="filterProp(event,'commercial')">Commercial</a>
+  </div>
+</div>
+
+<!-- PROPERTIES -->
+<section id="properties">
+  <div class="section-header">
+    <p class="section-label">Featured Listings</p>
+    <h2 class="section-title">Properties For You</h2>
+    <p class="section-sub">Carefully selected properties across Cebu — from affordable homes to premium residences and commercial spaces.</p>
+  </div>
+  <div class="properties-grid" id="propertiesGrid">
+    <!-- Cards injected by JS -->
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header centered">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">Real Estate Services</h2>
+    <p class="section-sub">End-to-end real estate solutions — from finding the perfect property to accurate appraisals and legal documentation.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Property Sales</h3>
+      <p>Assistance in buying and selling residential properties — house & lot, condominiums, townhouses, and raw lots across Cebu.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Property Appraisal</h3>
+      <p>Accurate, PRC-certified real property valuation for bank loan purposes, estate settlement, taxation, and investment decisions.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏗️</div>
+      <h3>Pre-Selling Units</h3>
+      <p>Access to exclusive pre-selling condominium and subdivision projects with the best payment schemes and developer discounts.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Commercial Leasing</h3>
+      <p>Office spaces, commercial lots, and retail units for lease. We match businesses with the right location at the right price.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📄</div>
+      <h3>Documentation & Title</h3>
+      <p>Guidance through the documentation process — deed of sale, transfer of title, BIR clearance, and notarization assistance.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💬</div>
+      <h3>Free Consultation</h3>
+      <p>Not sure where to start? Book a free one-on-one consultation to discuss your property goals, budget, and best options.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <div class="about-img-frame">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Cebuana Broker – Real Estate Professional" loading="lazy">
+      </div>
+      <div class="about-accent-card">
+        <div class="big-num">8+</div>
+        <div class="small-label">Years of Trust</div>
+      </div>
+    </div>
+    <div class="about-content">
+      <p class="section-label">About Your Broker</p>
+      <h2 class="section-title">Your Trusted Cebu Real Estate Expert</h2>
+      <p>With over 8 years of hands-on experience in the Cebu real estate market, I am a PRC-licensed Real Estate Broker and Appraiser committed to making every property transaction smooth, transparent, and rewarding.</p>
+      <p>Whether you're a first-time homebuyer, an investor looking for the next big opportunity, or a seller wanting top value — I provide personalized guidance every step of the way.</p>
+      <ul class="about-list">
+        <li>PRC Licensed Real Estate Broker</li>
+        <li>Certified Real Property Appraiser (CRPA)</li>
+        <li>Accredited with major Cebu developers</li>
+        <li>Bank-accredited appraiser (BDO, BPI, Metrobank)</li>
+        <li>Member – Philippine Association of Real Estate Boards (PAREB)</li>
+      </ul>
+      <div class="license-badge">
+        <span>🪪</span>
+        <div>
+          <span>PRC License No.</span>
+          <span>REB-0012345 · Valid until 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header centered">
+    <p class="section-label">Client Stories</p>
+    <h2 class="section-title">What Clients Say</h2>
+    <p class="section-sub">Real experiences from real clients across Cebu who found their dream properties with us.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"She helped us find our dream condo in IT Park within our budget. Super patient, very knowledgeable, and always available to answer our questions. Highly recommend!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">M</div>
+        <div>
+          <p class="testi-name">Maria Santos</p>
+          <p class="testi-role">Homebuyer – Cebu IT Park</p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Napaka-professional niya. Gi-appraise niya ang among property para sa bank loan ug on time gyud. Accurate kaayo ug makatuo gyud ka sa iyang trabaho."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <p class="testi-name">Ronaldo Lim</p>
+          <p class="testi-role">Property Appraisal – Mandaue</p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"I was relocating from Manila and needed a trusted broker in Cebu. She made the entire process stress-free — from property viewing to turnover. Exceptional service!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">J</div>
+        <div>
+          <p class="testi-name">Jessica Reyes</p>
+          <p class="testi-role">House & Lot Buyer – Talisay</p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Naka-sell mi sa among lot within 3 months lang! Ang iyang marketing ug negotiation skills pang-world class. Thank you so much, madam!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <p class="testi-name">Arvin & Gina Cruz</p>
+          <p class="testi-role">Lot Sellers – Consolacion</p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Best real estate broker in Cebu hands down. She went above and beyond — even assisted us with the BIR requirements and transfer of title. True professional!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">K</div>
+        <div>
+          <p class="testi-name">Kevin Ong</p>
+          <p class="testi-role">Condo Investor – Mabolo</p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Gi-recommend nako siya sa tanan kong friends. Honest kaayo ug di siya magpugos. Kua ang property na perfect para sa inyong budget ug needs."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">L</div>
+        <div>
+          <p class="testi-name">Luz Fernandez</p>
+          <p class="testi-role">Repeat Client – Cebu City</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Let's Find Your Perfect Property</h2>
+      <p class="section-sub">Ready to buy, sell, or need an appraisal? Send a message or reach out directly — free consultation available!</p>
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Phone / Viber</h4>
+          <a href="tel:+639XXXXXXXXX" class="contact-link">+63 9XX XXX XXXX</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:cebuana@example.com" class="contact-link">cebuana@cebuanabroker.com</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Service Area</h4>
+          <p>Cebu City · Mandaue · Lapu-Lapu · Talisay · Consolacion · Liloan · Nationwide</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">🕒</div>
+        <div>
+          <h4>Office Hours</h4>
+          <p>Monday – Saturday, 9:00 AM – 6:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:24px">Send an Inquiry</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Juan">
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="dela Cruz">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="juan@email.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone / Viber</label>
+        <input type="tel" id="phone" placeholder="+63 9XX XXX XXXX">
+      </div>
+      <div class="form-group">
+        <label for="interest">I'm Interested In</label>
+        <select id="interest">
+          <option value="">Select transaction type</option>
+          <option>Buying a Property</option>
+          <option>Selling a Property</option>
+          <option>Property Appraisal</option>
+          <option>Rental / Lease</option>
+          <option>Pre-Selling Condo / Subdivision</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Tell me about your property goals, budget range, preferred location…"></textarea>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitInquiry()">Send Inquiry 📤</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" aria-label="Cebuana Broker">
+        <div class="nav-logo-icon">CB</div>
+        <div class="nav-logo-text">
+          <span>Cebuana Broker</span>
+          <span>Real Estate · Appraisal</span>
+        </div>
+      </a>
+      <p>Your trusted PRC-licensed Real Estate Broker and Appraiser in Cebu. Helping families and investors find the right property since 2017.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Facebook">f</a>
+        <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+        <a href="#" class="social-btn" aria-label="Viber">📱</a>
+        <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Properties</h4>
+      <ul class="footer-links">
+        <li><a href="#properties">House &amp; Lot</a></li>
+        <li><a href="#properties">Condominium</a></li>
+        <li><a href="#properties">Lot Only</a></li>
+        <li><a href="#properties">Commercial</a></li>
+        <li><a href="#properties">Pre-Selling</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Property Sales</a></li>
+        <li><a href="#services">Appraisal</a></li>
+        <li><a href="#services">Commercial Lease</a></li>
+        <li><a href="#services">Documentation</a></li>
+        <li><a href="#services">Free Consultation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Client Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" onclick="openAuth()">Sign In / Register</a></li>
+        <li><a href="https://www.prc.gov.ph" target="_blank" rel="noopener">PRC Verify License</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Cebuana Broker. All rights reserved. PRC Licensed Real Estate Broker & Appraiser – Cebu, Philippines.</span>
+    <span>SEO-optimized · Powered by GHL Marketing</span>
+  </div>
+</footer>
+
+<!-- PROPERTY MODAL -->
+<div class="modal-overlay" id="propModal" role="dialog" aria-modal="true" aria-label="Property details">
+  <div class="modal" id="propModalContent">
+    <button class="modal-close" onclick="closeModal('propModal')" aria-label="Close">✕</button>
+    <div class="modal-gallery">
+      <img id="modalImg" src="" alt="Property photo">
+      <div class="modal-gallery-overlay">
+        <div class="modal-badge-row" id="modalBadges"></div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div style="margin-bottom:8px"><span id="modalType" style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)"></span></div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:6px" id="modalName"></h2>
+      <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:16px" id="modalLoc">📍 </p>
+      <div class="modal-price-row">
+        <div class="modal-price" id="modalPrice"></div>
+        <button class="modal-fav-btn" id="modalFavBtn" onclick="toggleModalFav()" aria-label="Favorite">🤍</button>
+      </div>
+      <div class="modal-features" id="modalFeatures"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-amenities" id="modalAmenities"></div>
+      <div class="modal-cta">
+        <button class="btn btn-gold" onclick="closeModal('propModal');document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📞 Inquire Now</button>
+        <button class="btn btn-navy" onclick="showToast('📅 Viewing request sent!')">🏡 Schedule Viewing</button>
+        <button class="btn btn-outline" style="color:var(--navy);border-color:var(--border)" onclick="shareProperty()">🔗 Share</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-label="Sign In or Register">
+  <div class="auth-modal">
+    <button class="modal-close" onclick="closeModal('authModal')" style="top:14px;right:14px" aria-label="Close">✕</button>
+    <div class="auth-header">
+      <div class="auth-logo">CB</div>
+      <h2>Welcome Back</h2>
+      <p>Sign in to save properties and track inquiries</p>
+    </div>
+    <div class="auth-body">
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchTab('login')">Sign In</button>
+        <button class="auth-tab" onclick="switchTab('register')">Register</button>
+      </div>
+      <div id="loginForm">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Enter your password">
+        </div>
+        <a href="#" class="auth-forgot">Forgot password?</a>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:16px" onclick="fakeLogin()">Sign In</button>
+      </div>
+      <div id="registerForm" style="display:none">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Juan"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Santos"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="juan@email.com"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+63 9XX XXX XXXX"></div>
+        <div class="form-group"><label>Password</label><input type="password" placeholder="Create a password"></div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:16px" onclick="fakeLogin()">Create Account</button>
+      </div>
+      <div class="auth-divider">or continue with</div>
+      <div class="auth-social">
+        <button class="auth-social-btn" onclick="showToast('Google sign-in coming soon')">🔍 Google</button>
+        <button class="auth-social-btn" onclick="showToast('Facebook sign-in coming soon')">f Facebook</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-icon">✓</div>
+  <span id="toastMsg"></span>
+</div>
+
+<script>
+const properties = [
+  {id:1,name:"The Residences at Banilad",type:"House & Lot",badge:"sale",loc:"Banilad, Cebu City",price:"₱ 8,500,000",beds:3,baths:2,area:180,lot:120,img:"https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",desc:"A beautifully designed 3-bedroom family home in the prestigious Banilad area. Features a modern open-plan living and dining area, spacious kitchen with granite countertops, and a landscaped garden. Walking distance to top schools and malls.",amenities:["Garage x2","Garden","CCTV","Water Heater","Balcony","Back Patio"]},
+  {id:2,name:"Azure Heights Condominium",type:"Condominium",badge:"pre",loc:"IT Park, Lahug, Cebu City",price:"₱ 4,200,000",beds:1,baths:1,area:45,lot:null,img:"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",desc:"Premium pre-selling condominium unit at the heart of IT Park. Enjoy resort-style amenities, stunning city views, and a convenient location surrounded by dining, entertainment, and offices.",amenities:["Pool","Gym","Function Hall","24/7 Security","Concierge","Parking"]},
+  {id:3,name:"Casa Verde Townhouse",type:"Townhouse",badge:"sale",loc:"Talamban, Cebu City",price:"₱ 3,800,000",beds:3,baths:2,area:120,lot:60,img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",desc:"Modern 3-bedroom end-unit townhouse in a gated community in Talamban. Features a second floor balcony, covered garage, and a private garden. Very close to Cebu IT Park and SM Seaside.",amenities:["Covered Garage","Garden","CCTV","Gated Community","Balcony"]},
+  {id:4,name:"Primavera Lot – Consolacion",type:"Lot Only",badge:"sale",loc:"Consolacion, Cebu",price:"₱ 1,200,000",beds:null,baths:null,area:200,lot:200,img:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",desc:"Titled residential lot in a fast-growing area in Consolacion — one of Cebu's most in-demand real estate locations. Ideal for building your dream home or investment. Clean title, ready for construction.",amenities:["Clean Title","Corner Lot","Road Access","Flat Terrain","Near Highway"]},
+  {id:5,name:"Mandaue Commercial Space",type:"Commercial",badge:"rent",loc:"A.C. Cortes Ave, Mandaue City",price:"₱ 45,000/mo",beds:null,baths:2,area:150,lot:null,img:"https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",desc:"Ground floor commercial space along the main commercial corridor in Mandaue City. Perfect for retail, restaurant, clinic, or office use. High foot traffic area, great signage visibility, and ample parking.",amenities:["Ground Floor","Parking","Restroom","Loading Bay","Signage Area"]},
+  {id:6,name:"Sunridge Subdivision – Talisay",type:"House & Lot",badge:"pre",loc:"Talisay City, Cebu",price:"₱ 2,950,000",beds:2,baths:1,area:65,lot:80,img:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",desc:"Affordable pre-selling house and lot in a peaceful, secured subdivision in Talisay. Flexible payment terms with as low as 10% down payment. Perfect for young families and OFW investors.",amenities:["Gated","Playground","Basketball Court","Covered Carport","Solar-Ready"]},
+  {id:7,name:"Sky View Studio – Mabolo",type:"Condominium",badge:"rent",loc:"Mabolo, Cebu City",price:"₱ 18,000/mo",beds:1,baths:1,area:32,lot:null,img:"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",desc:"Fully furnished studio unit on a high floor with panoramic Cebu City views. Ideal for professionals and digital nomads. Utilities included. Access to rooftop pool and fitness center.",amenities:["Fully Furnished","Pool Access","Gym","High Floor","Utilities Included","WiFi Ready"]},
+  {id:8,name:"Lapu-Lapu Beach House",type:"House & Lot",badge:"sale",loc:"Mactan, Lapu-Lapu City",price:"₱ 12,800,000",beds:4,baths:3,area:280,lot:400,img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",desc:"Exclusive beachfront property in Mactan Island — your own private paradise. 4 spacious bedrooms, 3 bathrooms, large outdoor deck facing the sea, and a private garden. Very rare find. Ideal for vacation home or Airbnb.",amenities:["Beach Access","Pool","Deck","Outdoor BBQ","4-Car Garage","Generator"]}
+];
+
+let currentPropId = null;
+let favorites = new Set();
+
+function createCard(p){
+  const favActive = favorites.has(p.id) ? 'active' : '';
+  const favIcon = favorites.has(p.id) ? '❤️' : '🤍';
+  const badgeMap = {sale:'badge-sale',rent:'badge-rent',pre:'badge-pre',sold:'badge-sold'};
+  const badgeLabel = {sale:'For Sale',rent:'For Rent',pre:'Pre-Selling',sold:'Sold'};
+  const feats = [];
+  if(p.beds !== null) feats.push(`<span class="prop-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9V5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v4M2 9h20M2 9v10M22 9v10M7 9v6M17 9v6"/></svg>${p.beds} Bed${p.beds>1?'s':''}</span>`);
+  if(p.baths !== null) feats.push(`<span class="prop-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>${p.baths} Bath${p.baths>1?'s':''}</span>`);
+  feats.push(`<span class="prop-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>${p.area}m²</span>`);
+  return `<div class="property-card" data-badge="${p.badge}" data-type="${p.type.toLowerCase()}" onclick="openPropModal(${p.id})" tabindex="0" role="button" aria-label="View ${p.name}">
+    <div class="property-img-wrap">
+      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      <div class="property-badge ${badgeMap[p.badge]||'badge-sale'}">${badgeLabel[p.badge]||'For Sale'}</div>
+      <button class="property-fav ${favActive}" onclick="event.stopPropagation();toggleFav(${p.id},this)" aria-label="Save to favorites">${favIcon}</button>
+    </div>
+    <div class="property-body">
+      <p class="property-type">${p.type}</p>
+      <h3 class="property-name">${p.name}</h3>
+      <p class="property-loc">📍 ${p.loc}</p>
+      <p class="property-price">${p.price}</p>
+      <div class="property-features">${feats.join('')}</div>
+    </div>
+  </div>`;
+}
+
+function renderProperties(filter='all'){
+  const grid = document.getElementById('propertiesGrid');
+  const filtered = filter === 'all' ? properties : properties.filter(p => {
+    if(['sale','rent','pre','sold'].includes(filter)) return p.badge === filter;
+    if(filter === 'house') return p.type.toLowerCase().includes('house');
+    if(filter === 'condo') return p.type.toLowerCase().includes('condo');
+    if(filter === 'lot') return p.type.toLowerCase().includes('lot');
+    if(filter === 'commercial') return p.type.toLowerCase().includes('commercial');
+    return true;
+  });
+  grid.innerHTML = filtered.length ? filtered.map(createCard).join('') : '<p style="color:var(--text-muted);grid-column:1/-1;text-align:center;padding:40px">No properties found for this filter.</p>';
+}
+
+function filterProp(e, type){
+  e.preventDefault();
+  document.querySelectorAll('.filter-tag').forEach(t=>t.classList.remove('active'));
+  e.target.classList.add('active');
+  renderProperties(type);
+}
+
+function toggleFav(id, btn){
+  if(favorites.has(id)){favorites.delete(id);btn.textContent='🤍';btn.classList.remove('active')}
+  else{favorites.add(id);btn.textContent='❤️';btn.classList.add('active');showToast('❤️ Saved to favorites!')}
+}
+
+function openPropModal(id){
+  const p = properties.find(x=>x.id===id);
+  if(!p) return;
+  currentPropId = id;
+  document.getElementById('modalImg').src = p.img;
+  document.getElementById('modalImg').alt = p.name;
+  document.getElementById('modalType').textContent = p.type;
+  document.getElementById('modalName').textContent = p.name;
+  document.getElementById('modalLoc').textContent = '📍 ' + p.loc;
+  document.getElementById('modalPrice').innerHTML = p.price + (p.badge==='rent'?'<span> per month</span>':'');
+  document.getElementById('modalDesc').textContent = p.desc;
+  const badgeMap = {sale:'badge-sale',rent:'badge-rent',pre:'badge-pre'};
+  const badgeLabel = {sale:'For Sale',rent:'For Rent',pre:'Pre-Selling'};
+  document.getElementById('modalBadges').innerHTML = `<span class="property-badge ${badgeMap[p.badge]||'badge-sale'}">${badgeLabel[p.badge]||'For Sale'}</span>`;
+  const feats = [];
+  if(p.beds!==null) feats.push(`<div class="modal-feat"><span class="feat-num">${p.beds}</span><span class="feat-label">Bedrooms</span></div>`);
+  if(p.baths!==null) feats.push(`<div class="modal-feat"><span class="feat-num">${p.baths}</span><span class="feat-label">Bathrooms</span></div>`);
+  feats.push(`<div class="modal-feat"><span class="feat-num">${p.area}</span><span class="feat-label">Floor (m²)</span></div>`);
+  if(p.lot) feats.push(`<div class="modal-feat"><span class="feat-num">${p.lot}</span><span class="feat-label">Lot (m²)</span></div>`);
+  document.getElementById('modalFeatures').innerHTML = feats.join('');
+  if(p.amenities && p.amenities.length){
+    document.getElementById('modalAmenities').innerHTML = `<h4>Amenities & Features</h4><div class="amenities-list">${p.amenities.map(a=>`<span class="amenity-pill">✓ ${a}</span>`).join('')}</div>`;
+  } else { document.getElementById('modalAmenities').innerHTML = ''; }
+  const favBtn = document.getElementById('modalFavBtn');
+  favBtn.textContent = favorites.has(id) ? '❤️' : '🤍';
+  document.getElementById('propModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function toggleModalFav(){
+  const btn = document.getElementById('modalFavBtn');
+  if(favorites.has(currentPropId)){favorites.delete(currentPropId);btn.textContent='🤍'}
+  else{favorites.add(currentPropId);btn.textContent='❤️';showToast('❤️ Saved to favorites!')}
+  renderProperties();
+}
+
+function shareProperty(){
+  if(navigator.share){ navigator.share({title:'Check this property!',url:window.location.href}) }
+  else{ navigator.clipboard.writeText(window.location.href);showToast('🔗 Link copied!') }
+}
+
+function closeModal(id){
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.modal-overlay').forEach(el => {
+  el.addEventListener('click', function(e){ if(e.target === this) closeModal(this.id); });
+});
+document.addEventListener('keydown', e => { if(e.key==='Escape') { closeModal('propModal');closeModal('authModal'); } });
+
+function openAuth(){ document.getElementById('authModal').classList.add('active'); document.body.style.overflow='hidden'; }
+
+function switchTab(tab){
+  document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('loginForm').style.display = tab==='login'?'block':'none';
+  document.getElementById('registerForm').style.display = tab==='register'?'block':'none';
+}
+
+function fakeLogin(){ closeModal('authModal'); showToast('👋 Welcome! You are now signed in.'); }
+
+function submitInquiry(){
+  const name = document.getElementById('fname').value.trim();
+  if(!name){ showToast('⚠️ Please enter your name'); return; }
+  showToast('✅ Inquiry sent! We\'ll contact you soon.');
+  ['fname','lname','email','phone','message'].forEach(id=>document.getElementById(id).value='');
+}
+
+let toastTimer;
+function showToast(msg){
+  clearTimeout(toastTimer);
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('show');
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 3200);
+}
+
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
+
+window.addEventListener('scroll',()=>{
+  const nav = document.getElementById('navbar');
+  const bt = document.getElementById('backTop');
+  nav.style.background = window.scrollY>60 ? 'rgba(13,27,42,0.98)' : 'rgba(13,27,42,0.96)';
+  bt.classList.toggle('show', window.scrollY > 400);
+});
+
+renderProperties();
+</script>
+</body>
+</html>
