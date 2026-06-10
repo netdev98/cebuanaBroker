@@ -1,963 +1,3044 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Cebuana Broker - Your trusted Real Estate Broker and Appraiser in Cebu. Find your dream home, condo, lot, or commercial property. Licensed PRC Real Estate Broker serving Cebu and nationwide.">
-<meta name="keywords" content="Cebu real estate, Cebuana broker, property for sale Cebu, condo for sale Cebu, house and lot Cebu, real estate appraiser Cebu, PRC broker Cebu">
-<meta property="og:title" content="Cebuana Broker | Real Estate Broker & Appraiser – Cebu">
-<meta property="og:description" content="Find your dream property in Cebu with a trusted PRC-licensed broker and appraiser.">
-<meta property="og:type" content="website">
-<title>Cebuana Broker | Real Estate Broker & Appraiser – Cebu</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --gold:#C9A84C;
-  --gold-light:#F0D98A;
-  --gold-dark:#8A6B28;
-  --navy:#0D1B2A;
-  --navy-mid:#1C2F45;
-  --navy-soft:#2A4260;
-  --cream:#FAF7F2;
-  --cream-dark:#F0EAE0;
-  --text:#1A1A1A;
-  --text-mid:#4A4A4A;
-  --text-muted:#7A7A7A;
-  --white:#FFFFFF;
-  --border:#E5DDD0;
-  --success:#2E7D52;
-  --shadow:0 4px 24px rgba(13,27,42,0.10);
-  --shadow-hover:0 12px 40px rgba(13,27,42,0.18);
-  --radius:12px;
-  --radius-lg:20px;
-}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;overflow-x:hidden}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Cebuana Broker – Your trusted PRC-Licensed Real Estate Broker and Appraiser in Cebu. Find houses, condos, lots, and commercial properties. Book a free consultation today.">
+  <meta name="keywords"
+    content="Cebu real estate broker, house and lot Cebu, condo for sale Cebu, property appraiser Cebu, PRC broker Cebu, Cebuana Broker">
+  <meta property="og:title" content="Cebuana Broker | Real Estate Broker & Appraiser – Cebu">
+  <meta property="og:description"
+    content="Find your dream property in Cebu. Licensed broker, certified appraiser, honest guidance.">
+  <meta property="og:type" content="website">
+  <title>Cebuana Broker | Real Estate Broker & Appraiser – Cebu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-/* SCROLLBAR */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--cream-dark)}
-::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+    :root {
+      --linen: #F9F5F0;
+      --linen-2: #F2EBE2;
+      --linen-3: #E8DDD5;
+      --espresso: #1C1917;
+      --espresso-2: #2D2420;
+      --espresso-3: #3D3430;
+      --terra: #C8956C;
+      --terra-2: #B07850;
+      --terra-3: #8B5E52;
+      --terra-light: #FAF0E8;
+      --terra-xlight: #FDF7F2;
+      --rose: #D4A090;
+      --sage: #7A9E8E;
+      --white: #FFFFFF;
+      --text: #1C1917;
+      --text-2: #5C4F49;
+      --text-3: #9A8880;
+      --border: #E0D4CC;
+      --border-2: #CFC0B5;
+      --r: 10px;
+      --r-lg: 18px;
+      --r-xl: 28px;
+      --sh: 0 2px 20px rgba(28, 25, 23, 0.08);
+      --sh-md: 0 6px 32px rgba(28, 25, 23, 0.12);
+      --sh-lg: 0 16px 56px rgba(28, 25, 23, 0.16);
+    }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;background:rgba(13,27,42,0.96);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(201,168,76,0.25)}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--navy);font-weight:700;font-family:'Playfair Display',serif}
-.nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
-.nav-logo-text span:first-child{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold)}
-.nav-logo-text span:last-child{font-size:10px;color:rgba(255,255,255,0.55);letter-spacing:1.5px;text-transform:uppercase}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{text-decoration:none;color:rgba(255,255,255,0.80);font-size:13.5px;font-weight:500;letter-spacing:0.3px;transition:color .2s}
-.nav-links a:hover{color:var(--gold)}
-.nav-actions{display:flex;gap:10px;align-items:center}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:500;transition:all .25s;text-decoration:none;white-space:nowrap}
-.btn-outline{background:transparent;border:1.5px solid var(--gold);color:var(--gold);padding:8px 18px;border-radius:8px;font-size:13px}
-.btn-outline:hover{background:var(--gold);color:var(--navy)}
-.btn-gold{background:var(--gold);color:var(--navy);padding:10px 22px;border-radius:8px;font-size:13px;font-weight:600}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,0.35)}
-.btn-primary{background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:10px;font-size:15px;font-weight:600}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.4)}
-.btn-secondary{background:transparent;border:2px solid var(--white);color:var(--white);padding:14px 32px;border-radius:10px;font-size:15px;font-weight:500}
-.btn-secondary:hover{background:rgba(255,255,255,0.12);transform:translateY(-2px)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:1px;transition:.3s}
+    html {
+      scroll-behavior: smooth
+    }
 
-/* HERO */
-.hero{min-height:100vh;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 50%,#1a3050 100%);position:relative;display:flex;align-items:center;padding:120px 5% 80px;overflow:hidden}
-.hero-bg-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(201,168,76,1) 30px,rgba(201,168,76,1) 31px)}
-.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
-.hero-orb-1{width:500px;height:500px;background:rgba(201,168,76,0.12);top:-100px;right:-100px}
-.hero-orb-2{width:300px;height:300px;background:rgba(42,66,96,0.5);bottom:0;left:-50px}
-.hero-content{position:relative;z-index:2;max-width:680px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.35);color:var(--gold);padding:7px 16px;border-radius:50px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:28px}
-.hero-badge::before{content:'';width:7px;height:7px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,62px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:20px}
-.hero h1 em{color:var(--gold);font-style:normal}
-.hero p{font-size:17px;color:rgba(255,255,255,0.70);line-height:1.8;margin-bottom:36px;max-width:520px}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
-.hero-stats{display:flex;gap:40px;border-top:1px solid rgba(255,255,255,0.12);padding-top:36px}
-.hero-stat{display:flex;flex-direction:column}
-.hero-stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)}
-.hero-stat-label{font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.5px;margin-top:2px}
-.hero-cards{position:absolute;right:5%;bottom:60px;display:flex;flex-direction:column;gap:14px;z-index:2}
-.hero-float-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;color:var(--white);min-width:220px}
-.hero-float-card-icon{width:38px;height:38px;background:var(--gold);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.hero-float-card-text span{display:block}
-.hero-float-card-text span:first-child{font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:0.5px}
-.hero-float-card-text span:last-child{font-size:14px;font-weight:600;margin-top:1px}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--linen);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.7
+    }
 
-/* SEARCH BAR */
-.search-section{background:var(--white);padding:32px 5%;box-shadow:0 4px 20px rgba(13,27,42,0.08);position:relative;z-index:10}
-.search-bar{display:flex;gap:0;border:2px solid var(--border);border-radius:14px;overflow:hidden;background:var(--white);max-width:960px;margin:0 auto;box-shadow:var(--shadow)}
-.search-select,.search-input{border:none;outline:none;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:transparent;padding:14px 18px}
-.search-select{min-width:140px;border-right:1.5px solid var(--border);color:var(--text-mid);cursor:pointer}
-.search-input{flex:1}
-.search-input::placeholder{color:var(--text-muted)}
-.search-btn{background:var(--gold);color:var(--navy);border:none;padding:0 28px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;letter-spacing:0.3px;display:flex;align-items:center;gap:8px}
-.search-btn:hover{background:var(--gold-dark);color:var(--white)}
-.search-filters{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap;max-width:960px;margin:16px auto 0}
-.filter-tag{background:var(--cream);border:1.5px solid var(--border);color:var(--text-mid);padding:6px 16px;border-radius:50px;font-size:12.5px;font-weight:500;cursor:pointer;transition:.2s;text-decoration:none}
-.filter-tag:hover,.filter-tag.active{background:var(--navy);border-color:var(--navy);color:var(--white)}
+    img {
+      display: block;
+      max-width: 100%
+    }
 
-/* SECTIONS */
-section{padding:80px 5%}
-.section-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:14px}
-.section-sub{font-size:16px;color:var(--text-mid);max-width:560px;line-height:1.75}
-.section-header{margin-bottom:48px}
-.section-header.centered{text-align:center}
-.section-header.centered .section-sub{margin:0 auto}
+    a {
+      text-decoration: none;
+      color: inherit
+    }
 
-/* PROPERTIES */
-#properties{background:var(--cream)}
-.properties-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
-.property-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:transform .35s ease,box-shadow .35s ease;cursor:pointer;position:relative}
-.property-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:var(--shadow-hover)}
-.property-img-wrap{position:relative;height:220px;overflow:hidden}
-.property-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.property-card:hover .property-img-wrap img{transform:scale(1.10)}
-.property-badge{position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
-.badge-sale{background:var(--gold);color:var(--navy)}
-.badge-rent{background:var(--navy);color:var(--gold)}
-.badge-pre{background:#5C3D9E;color:#E9D5FF}
-.badge-sold{background:#D1FAE5;color:#065F46}
-.property-fav{position:absolute;top:14px;right:14px;width:34px;height:34px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;border:none;font-size:14px}
-.property-fav:hover{background:var(--white);color:#e53935}
-.property-fav.active{color:#e53935}
-.property-body{padding:20px}
-.property-type{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.property-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.3}
-.property-loc{font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:5px;margin-bottom:14px}
-.property-price{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:16px;font-family:'Playfair Display',serif}
-.property-price span{font-size:12px;font-weight:400;color:var(--text-muted);font-family:'Inter',sans-serif}
-.property-features{display:flex;gap:14px;padding-top:14px;border-top:1px solid var(--border)}
-.prop-feat{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-mid);font-weight:500}
-.prop-feat svg{width:15px;height:15px;flex-shrink:0;color:var(--gold)}
+    ::selection {
+      background: var(--terra);
+      color: #fff
+    }
 
-/* SERVICES */
-#services{background:var(--white)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
-.service-card{background:var(--cream);border-radius:var(--radius-lg);padding:32px 28px;transition:.3s;border:1.5px solid transparent}
-.service-card:hover{background:var(--white);border-color:var(--gold);box-shadow:var(--shadow)}
-.service-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--navy),var(--navy-soft));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
-.service-card h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px}
-.service-card p{font-size:14px;color:var(--text-mid);line-height:1.75}
+    ::-webkit-scrollbar {
+      width: 4px
+    }
 
-/* ABOUT */
-#about{background:var(--navy);position:relative;overflow:hidden}
-#about::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:linear-gradient(135deg,transparent,rgba(201,168,76,0.06));pointer-events:none}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about-img-wrap{position:relative}
-.about-img-frame{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,var(--navy-soft),var(--navy-mid));border-radius:24px;overflow:hidden;position:relative}
-.about-img-frame img{width:100%;height:100%;object-fit:cover}
-.about-accent-card{position:absolute;bottom:-24px;right:-24px;background:var(--gold);border-radius:16px;padding:20px 24px;box-shadow:0 8px 32px rgba(201,168,76,0.3)}
-.about-accent-card .big-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--navy);line-height:1}
-.about-accent-card .small-label{font-size:12px;font-weight:600;color:var(--navy-soft);margin-top:4px;letter-spacing:0.5px}
-.about-content .section-label{color:var(--gold)}
-.about-content .section-title{color:var(--white)}
-.about-content p{color:rgba(255,255,255,0.72);font-size:15.5px;line-height:1.85;margin-bottom:18px}
-.about-list{list-style:none;margin:24px 0;display:flex;flex-direction:column;gap:12px}
-.about-list li{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.80);font-size:14.5px}
-.about-list li::before{content:'✓';width:24px;height:24px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:11px;font-weight:700;flex-shrink:0}
-.license-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px 20px;margin-top:24px}
-.license-badge span:first-child{font-size:22px}
-.license-badge div{display:flex;flex-direction:column}
-.license-badge div span:first-child{font-size:12px;color:rgba(255,255,255,0.5)}
-.license-badge div span:last-child{font-size:13px;font-weight:600;color:var(--white)}
+    ::-webkit-scrollbar-track {
+      background: var(--linen-2)
+    }
 
-/* TESTIMONIALS */
-#testimonials{background:var(--cream)}
-.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
-.testi-card{background:var(--white);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow);border:1.5px solid var(--border);transition:.3s}
-.testi-card:hover{border-color:var(--gold);box-shadow:var(--shadow-hover)}
-.testi-stars{color:var(--gold);font-size:15px;margin-bottom:14px;letter-spacing:2px}
-.testi-text{font-size:14.5px;color:var(--text-mid);line-height:1.8;margin-bottom:20px;font-style:italic}
-.testi-author{display:flex;align-items:center;gap:12px}
-.testi-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;color:var(--navy);font-family:'Playfair Display',serif;flex-shrink:0}
-.testi-name{font-weight:600;font-size:14px;color:var(--navy)}
-.testi-role{font-size:12px;color:var(--text-muted);margin-top:1px}
+    ::-webkit-scrollbar-thumb {
+      background: var(--terra);
+      border-radius: 2px
+    }
 
-/* CONTACT */
-#contact{background:var(--white)}
-.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
-.contact-info .section-sub{margin-bottom:36px}
-.contact-detail{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
-.contact-icon{width:46px;height:46px;background:var(--cream);border:1.5px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.contact-detail h4{font-size:13px;font-weight:600;color:var(--navy);letter-spacing:0.5px;margin-bottom:4px;text-transform:uppercase}
-.contact-detail p,.contact-detail a{font-size:15px;color:var(--text-mid);text-decoration:none;transition:.2s}
-.contact-detail a:hover{color:var(--gold)}
-.contact-form{background:var(--cream);border-radius:var(--radius-lg);padding:40px;border:1.5px solid var(--border)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
-.form-group label{font-size:12.5px;font-weight:600;color:var(--navy);letter-spacing:0.5px;text-transform:uppercase}
-.form-group input,.form-group select,.form-group textarea{border:1.5px solid var(--border);border-radius:10px;padding:12px 16px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:var(--white);outline:none;transition:.2s;resize:vertical}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,0.12)}
-.form-group textarea{min-height:110px}
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1)
+    }
 
-/* FOOTER */
-footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:56px 5% 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.footer-brand p{font-size:14px;line-height:1.8;margin:14px 0 20px}
-.footer-social{display:flex;gap:10px}
-.social-btn{width:36px;height:36px;background:rgba(255,255,255,0.07);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;transition:.2s;text-decoration:none;color:rgba(255,255,255,0.7)}
-.social-btn:hover{background:var(--gold);color:var(--navy)}
-.footer-col h4{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:18px}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-links a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:13.5px;transition:.2s}
-.footer-links a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.10);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:rgba(255,255,255,0.40)}
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
 
-/* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(13,27,42,0.80);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
-.modal-overlay.active{display:flex}
-.modal{background:var(--white);border-radius:24px;overflow:hidden;max-width:860px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:modalIn .3s ease}
-@keyframes modalIn{from{transform:scale(.93) translateY(20px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
-.modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;background:rgba(255,255,255,0.9);border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;font-size:16px;color:var(--navy);transition:.2s;line-height:1}
-.modal-close:hover{background:var(--navy);color:var(--white)}
-.modal-gallery{height:320px;background:var(--navy-soft);position:relative;overflow:hidden}
-.modal-gallery img{width:100%;height:100%;object-fit:cover}
-.modal-gallery-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,27,42,0.7));padding:24px}
-.modal-badge-row{display:flex;gap:8px}
-.modal-body{padding:32px}
-.modal-price-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}
-.modal-price{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--navy)}
-.modal-price span{font-size:14px;font-weight:400;color:var(--text-muted);font-family:'Inter',sans-serif}
-.modal-fav-btn{width:44px;height:44px;border:1.5px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:.2s;background:var(--white)}
-.modal-fav-btn:hover{border-color:var(--gold);color:#e53935}
-.modal-features{display:flex;gap:24px;background:var(--cream);border-radius:12px;padding:18px 24px;margin-bottom:28px;flex-wrap:wrap}
-.modal-feat{display:flex;flex-direction:column;align-items:center;gap:4px}
-.modal-feat .feat-num{font-size:18px;font-weight:700;color:var(--navy);font-family:'Playfair Display',serif}
-.modal-feat .feat-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
-.modal-desc{font-size:14.5px;color:var(--text-mid);line-height:1.85;margin-bottom:28px}
-.modal-amenities{margin-bottom:28px}
-.modal-amenities h4{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:14px}
-.amenities-list{display:flex;flex-wrap:wrap;gap:10px}
-.amenity-pill{background:var(--cream);border:1.5px solid var(--border);border-radius:50px;padding:6px 14px;font-size:12.5px;color:var(--text-mid);font-weight:500;display:flex;align-items:center;gap:6px}
-.modal-cta{display:flex;gap:12px;flex-wrap:wrap}
-.modal-cta .btn{flex:1;min-width:160px;justify-content:center;padding:14px 20px;border-radius:12px;font-size:14px}
-.btn-navy{background:var(--navy);color:var(--white)}
-.btn-navy:hover{background:var(--navy-soft);transform:translateY(-1px)}
+    .reveal-delay-1 {
+      transition-delay: .1s
+    }
 
-/* LOGIN MODAL */
-.auth-modal{background:var(--white);border-radius:24px;max-width:440px;width:100%;position:relative;animation:modalIn .3s ease;overflow:hidden}
-.auth-header{background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:36px 36px 28px;text-align:center}
-.auth-header .auth-logo{width:52px;height:52px;background:var(--gold);border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin:0 auto 16px}
-.auth-header h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--white)}
-.auth-header p{font-size:13px;color:rgba(255,255,255,0.55);margin-top:6px}
-.auth-body{padding:32px 36px 36px}
-.auth-tabs{display:flex;gap:0;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:26px}
-.auth-tab{flex:1;padding:10px;text-align:center;cursor:pointer;font-size:13.5px;font-weight:600;transition:.2s;background:transparent;border:none;font-family:'Inter',sans-serif;color:var(--text-muted)}
-.auth-tab.active{background:var(--navy);color:var(--white)}
-.auth-forgot{font-size:12px;color:var(--gold);text-decoration:none;display:block;text-align:right;margin-top:-10px;margin-bottom:20px}
-.auth-divider{display:flex;align-items:center;gap:14px;margin:20px 0;color:var(--text-muted);font-size:12px}
-.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border)}
-.auth-social{display:flex;gap:12px}
-.auth-social-btn{flex:1;padding:10px;border:1.5px solid var(--border);border-radius:10px;background:var(--white);cursor:pointer;font-size:13px;font-family:'Inter',sans-serif;font-weight:500;color:var(--text);transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px}
-.auth-social-btn:hover{border-color:var(--gold);background:var(--cream)}
+    .reveal-delay-2 {
+      transition-delay: .2s
+    }
 
-/* TOAST */
-.toast{position:fixed;bottom:28px;right:28px;background:var(--navy);color:var(--white);padding:14px 22px;border-radius:12px;font-size:14px;font-weight:500;box-shadow:0 8px 32px rgba(13,27,42,0.25);z-index:3000;display:flex;align-items:center;gap:10px;transform:translateY(80px);opacity:0;transition:.4s cubic-bezier(.34,1.56,.64,1);max-width:300px}
-.toast.show{transform:translateY(0);opacity:1}
-.toast-icon{width:28px;height:28px;background:var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+    .reveal-delay-3 {
+      transition-delay: .3s
+    }
 
-/* BACK TO TOP */
-.back-top{position:fixed;bottom:28px;left:28px;width:44px;height:44px;background:var(--gold);color:var(--navy);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:500;box-shadow:0 4px 16px rgba(201,168,76,0.4);opacity:0;transform:translateY(20px);transition:.3s;border:none;font-size:18px}
-.back-top.show{opacity:1;transform:translateY(0)}
+    .reveal-delay-4 {
+      transition-delay: .4s
+    }
 
-/* MOBILE NAV */
-.mobile-menu{position:fixed;top:70px;left:0;right:0;background:var(--navy);z-index:999;padding:24px 5%;display:none;flex-direction:column;gap:16px;border-bottom:1px solid rgba(201,168,76,0.2)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{color:rgba(255,255,255,0.80);text-decoration:none;font-size:15px;font-weight:500;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07)}
-.mobile-menu a:hover{color:var(--gold)}
-.mobile-menu-actions{display:flex;gap:12px;padding-top:8px}
+    /* ── TYPE ── */
+    .serif {
+      font-family: 'Playfair Display', serif
+    }
 
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .about-grid{grid-template-columns:1fr;gap:48px}
-  .about-img-wrap{display:none}
-  .contact-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .hero-cards{display:none}
-}
-@media(max-width:768px){
-  .nav-links,.nav-actions{display:none}
-  .hamburger{display:flex}
-  .hero{padding:100px 5% 60px}
-  .hero-stats{gap:28px}
-  .search-bar{flex-direction:column;border-radius:0}
-  .search-select{border-right:none;border-bottom:1.5px solid var(--border)}
-  .search-btn{padding:16px;justify-content:center}
-  .form-row{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr;gap:28px}
-  .modal-body{padding:20px}
-  .modal-price-row{flex-direction:column;gap:12px}
-  .modal-features{gap:16px}
-  .about-accent-card{bottom:-14px;right:-10px}
-  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
-}
-</style>
+    .d1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(44px, 6vw, 80px);
+      line-height: 1.0;
+      letter-spacing: -1.5px;
+      font-weight: 700
+    }
+
+    .d2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      font-weight: 700
+    }
+
+    .d3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 2.8vw, 34px);
+      line-height: 1.2;
+      letter-spacing: -.5px;
+      font-weight: 600
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--terra);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--terra)
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      transition: all .22s;
+      text-decoration: none;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0);
+      transition: .22s
+    }
+
+    .btn:hover::after {
+      background: rgba(255, 255, 255, 0.08)
+    }
+
+    .btn-terra {
+      background: var(--terra);
+      color: #fff;
+      padding: 15px 32px;
+      border-radius: 50px;
+      font-size: 15px
+    }
+
+    .btn-terra:hover {
+      background: var(--terra-2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(200, 149, 108, 0.35)
+    }
+
+    .btn-outline-e {
+      background: transparent;
+      border: 1.5px solid var(--espresso);
+      color: var(--espresso);
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-size: 15px
+    }
+
+    .btn-outline-e:hover {
+      background: var(--espresso);
+      color: #fff;
+      transform: translateY(-2px)
+    }
+
+    .btn-outline-w {
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.55);
+      color: #fff;
+      padding: 13px 26px;
+      border-radius: 50px;
+      font-size: 14px
+    }
+
+    .btn-outline-w:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.10)
+    }
+
+    .btn-sm {
+      padding: 10px 22px;
+      font-size: 13px
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--text-2);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 13px
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--terra);
+      color: var(--terra)
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 68px;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(249, 245, 240, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: .3s
+    }
+
+    nav.dark {
+      background: rgba(28, 25, 23, 0.96);
+      border-bottom-color: rgba(255, 255, 255, 0.08)
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .nav-monogram {
+      width: 38px;
+      height: 38px;
+      background: var(--terra);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0
+    }
+
+    .nav-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--espresso);
+      line-height: 1.15
+    }
+
+    nav.dark .nav-name {
+      color: #fff
+    }
+
+    .nav-name small {
+      display: block;
+      font-size: 9px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      color: var(--text-3);
+      letter-spacing: 2px;
+      text-transform: uppercase
+    }
+
+    nav.dark .nav-name small {
+      color: rgba(255, 255, 255, 0.40)
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none
+    }
+
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-2);
+      transition: .2s;
+      position: relative
+    }
+
+    nav.dark .nav-links a {
+      color: rgba(255, 255, 255, 0.70)
+    }
+
+    .nav-links a:hover {
+      color: var(--terra)
+    }
+
+    nav.dark .nav-links a:hover {
+      color: var(--terra)
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--espresso);
+      transition: .3s
+    }
+
+    nav.dark .hamburger span {
+      background: rgba(255, 255, 255, 0.70)
+    }
+
+    .mob-nav {
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      z-index: 999;
+      padding: 20px 5%;
+      display: none;
+      flex-direction: column;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--sh-md)
+    }
+
+    .mob-nav.open {
+      display: flex
+    }
+
+    .mob-nav a {
+      font-size: 15px;
+      color: var(--text-2);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .mob-nav a:hover {
+      color: var(--terra)
+    }
+
+    .mob-btns {
+      display: flex;
+      gap: 10px;
+      padding-top: 12px
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--espresso);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative
+    }
+
+    /* subtle texture pattern */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+      background-size: 28px 28px;
+      z-index: 0;
+      pointer-events: none
+    }
+
+    .hero-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 120px 5% 80px;
+      position: relative;
+      z-index: 2
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(200, 149, 108, 0.14);
+      border: 1px solid rgba(200, 149, 108, 0.30);
+      color: var(--terra);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px
+    }
+
+    .hero-pill-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--terra);
+      border-radius: 50%;
+      animation: pulse 2.2s infinite
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1
+      }
+
+      50% {
+        transform: scale(1.6);
+        opacity: .4
+      }
+    }
+
+    .hero h1 {
+      color: #fff;
+      margin-bottom: 8px
+    }
+
+    .hero h1 em {
+      color: var(--terra);
+      font-style: italic
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.60);
+      font-weight: 300;
+      line-height: 1.85;
+      max-width: 480px;
+      margin-bottom: 36px
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 52px
+    }
+
+    .hero-trust {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 13px
+    }
+
+    .trust-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--terra);
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    /* hero right – photo mosaic */
+    .hero-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 260px 180px;
+      gap: 12px;
+      position: relative
+    }
+
+    .mosaic-1 {
+      grid-row: span 2;
+      border-radius: var(--r-lg) var(--r-lg) var(--r-lg) var(--r-lg);
+      overflow: hidden;
+      position: relative
+    }
+
+    .mosaic-2,
+    .mosaic-3 {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      position: relative
+    }
+
+    .mosaic-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .6s
+    }
+
+    .mosaic-1:hover .mosaic-img,
+    .mosaic-2:hover .mosaic-img,
+    .mosaic-3:hover .mosaic-img {
+      transform: scale(1.05)
+    }
+
+    .mosaic-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(249, 245, 240, 0.92);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 10px 14px
+    }
+
+    .mosaic-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--espresso);
+      line-height: 1
+    }
+
+    .mosaic-badge-label {
+      font-size: 10px;
+      color: var(--text-3);
+      letter-spacing: 0.5px;
+      margin-top: 1px
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.30);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.30), transparent);
+      animation: scrollPulse 2s infinite
+    }
+
+    @keyframes scrollPulse {
+      0% {
+        opacity: 1;
+        transform: scaleY(1)
+      }
+
+      100% {
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top
+      }
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .stats-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      divide-x: 1px
+    }
+
+    .stat-cell {
+      padding: 28px 32px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 16px
+    }
+
+    .stat-cell:last-child {
+      border-right: none
+    }
+
+    .stat-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--terra-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--espresso);
+      line-height: 1
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-3);
+      margin-top: 2px;
+      letter-spacing: 0.3px
+    }
+
+    /* ── SECTION ── */
+    .sec {
+      padding: 96px 5%
+    }
+
+    .con {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .sec-sub {
+      font-size: 17px;
+      color: var(--text-2);
+      font-weight: 300;
+      line-height: 1.85;
+      max-width: 540px;
+      margin-top: 10px
+    }
+
+    /* ── PROPERTIES ── */
+    .props-sec {
+      background: var(--linen)
+    }
+
+    .props-filter {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px
+    }
+
+    .filter-btn {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      color: var(--text-2);
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: .2s
+    }
+
+    .filter-btn:hover,
+    .filter-btn.on {
+      background: var(--espresso);
+      border-color: var(--espresso);
+      color: #fff
+    }
+
+    /* masonry-style grid */
+    .props-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px
+    }
+
+    /* tilt card */
+    .prop-card {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--sh);
+      transition: box-shadow .35s;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateX(0) rotateY(0);
+      will-change: transform
+    }
+
+    .prop-card:hover {
+      box-shadow: var(--sh-lg)
+    }
+
+    .prop-card-img {
+      height: 220px;
+      overflow: hidden;
+      position: relative
+    }
+
+    .prop-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    .prop-card:hover .prop-card-img img {
+      transform: scale(1.06)
+    }
+
+    .prop-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(28, 25, 23, 0.50) 0%, transparent 55%)
+    }
+
+    .prop-status {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 5px 13px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase
+    }
+
+    .status-sale {
+      background: var(--terra);
+      color: #fff
+    }
+
+    .status-rent {
+      background: var(--espresso);
+      color: #fff
+    }
+
+    .status-pre {
+      background: #6366F1;
+      color: #fff
+    }
+
+    .prop-fav {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      background: rgba(255, 255, 255, 0.90);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      transition: .2s;
+      backdrop-filter: blur(4px)
+    }
+
+    .prop-fav:hover {
+      background: var(--white);
+      transform: scale(1.1)
+    }
+
+    .prop-fav.on {
+      color: #E53935
+    }
+
+    .prop-price-overlay {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end
+    }
+
+    .prop-price-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1
+    }
+
+    .prop-price-sub {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.70)
+    }
+
+    .prop-body {
+      padding: 20px
+    }
+
+    .prop-type {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 5px
+    }
+
+    .prop-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--espresso);
+      margin-bottom: 5px;
+      line-height: 1.3
+    }
+
+    .prop-loc {
+      font-size: 13px;
+      color: var(--text-3);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .prop-feats {
+      display: flex;
+      gap: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border)
+    }
+
+    .p-feat {
+      font-size: 12px;
+      color: var(--text-2);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .p-feat-icon {
+      color: var(--terra);
+      font-size: 13px
+    }
+
+    /* ── ABOUT ── */
+    .about-sec {
+      background: var(--white)
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 88px;
+      align-items: center
+    }
+
+    .about-img-col {
+      position: relative
+    }
+
+    .about-img-frame {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      position: relative
+    }
+
+    .about-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--terra);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      box-shadow: 0 10px 36px rgba(200, 149, 108, 0.35)
+    }
+
+    .about-badge .big {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1
+    }
+
+    .about-badge .small {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.70);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 3px
+    }
+
+    .about-badge2 {
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 14px 18px;
+      box-shadow: var(--sh-md)
+    }
+
+    .about-badge2 .b2-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--espresso)
+    }
+
+    .about-badge2 .b2-sub {
+      font-size: 10px;
+      color: var(--text-3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 3px
+    }
+
+    .about-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 24px 0
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.6
+    }
+
+    .about-list li::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: var(--terra-light);
+      border: 1px solid rgba(200, 149, 108, 0.30);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px
+    }
+
+    .about-cert {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px
+    }
+
+    .cert-chip {
+      background: var(--linen);
+      border: 1px solid var(--border-2);
+      color: var(--text-2);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500
+    }
+
+    /* ── SERVICES ── */
+    .services-sec {
+      background: var(--linen-2)
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .svc-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+      cursor: default
+    }
+
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--terra);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: .35s
+    }
+
+    .svc-card:hover::before {
+      transform: scaleX(1)
+    }
+
+    .svc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sh-md)
+    }
+
+    .svc-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--terra-light);
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+      transition: .3s
+    }
+
+    .svc-card:hover .svc-icon {
+      background: var(--terra);
+      transform: scale(1.05)
+    }
+
+    .svc-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--espresso);
+      margin-bottom: 10px
+    }
+
+    .svc-card p {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.75
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testi-sec {
+      background: var(--espresso);
+      position: relative;
+      overflow: hidden
+    }
+
+    .testi-sec::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 400px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.03);
+      position: absolute;
+      top: -60px;
+      left: 4%;
+      line-height: 1;
+      pointer-events: none;
+      z-index: 0
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 1
+    }
+
+    .testi-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: var(--r-lg);
+      padding: 30px;
+      transition: .3s
+    }
+
+    .testi-card:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(200, 149, 108, 0.30)
+    }
+
+    .testi-card.featured {
+      background: var(--terra);
+      border-color: var(--terra)
+    }
+
+    .tq {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      color: var(--terra);
+      line-height: .8;
+      margin-bottom: 12px;
+      display: block
+    }
+
+    .testi-card.featured .tq {
+      color: rgba(255, 255, 255, 0.30)
+    }
+
+    .testi-stars {
+      color: var(--terra);
+      letter-spacing: 3px;
+      font-size: 13px;
+      margin-bottom: 12px
+    }
+
+    .testi-card.featured .testi-stars {
+      color: #fff
+    }
+
+    .testi-text {
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 20px
+    }
+
+    .testi-card.featured .testi-text {
+      color: rgba(255, 255, 255, 0.85)
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 11px
+    }
+
+    .testi-av {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0
+    }
+
+    .testi-card.featured .testi-av {
+      background: rgba(255, 255, 255, 0.20)
+    }
+
+    .testi-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff
+    }
+
+    .testi-role {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.40);
+      margin-top: 1px
+    }
+
+    .testi-card.featured .testi-role {
+      color: rgba(255, 255, 255, 0.65)
+    }
+
+    /* ── CONTACT ── */
+    .contact-sec {
+      background: var(--linen)
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 28px 0
+    }
+
+    .c-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 16px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: .25s
+    }
+
+    .c-card:hover {
+      border-color: var(--terra);
+      box-shadow: var(--sh)
+    }
+
+    .c-ico {
+      width: 40px;
+      height: 40px;
+      background: var(--terra-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0
+    }
+
+    .c-card h4 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 3px
+    }
+
+    .c-card p,
+    .c-card a {
+      font-size: 15px;
+      color: var(--espresso);
+      font-weight: 500
+    }
+
+    .c-card a:hover {
+      color: var(--terra)
+    }
+
+    .lead-form {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      padding: 40px;
+      border: 1px solid var(--border);
+      box-shadow: var(--sh-md)
+    }
+
+    .lead-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--espresso);
+      margin-bottom: 6px
+    }
+
+    .lead-form p.sub {
+      font-size: 14px;
+      color: var(--text-2);
+      margin-bottom: 26px;
+      line-height: 1.6
+    }
+
+    .fg {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px
+    }
+
+    .fg label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-3)
+    }
+
+    .fg input,
+    .fg select,
+    .fg textarea {
+      background: var(--linen);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r);
+      padding: 12px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: .2s;
+      width: 100%;
+      resize: vertical
+    }
+
+    .fg input::placeholder,
+    .fg textarea::placeholder {
+      color: var(--text-3)
+    }
+
+    .fg input:focus,
+    .fg select:focus,
+    .fg textarea:focus {
+      border-color: var(--terra);
+      box-shadow: 0 0 0 3px rgba(200, 149, 108, 0.12);
+      background: var(--white)
+    }
+
+    .fg select option {
+      background: #fff
+    }
+
+    .fg textarea {
+      min-height: 100px
+    }
+
+    .fgr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    /* ── MODAL (property detail) ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 25, 23, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto
+    }
+
+    .modal-overlay.open {
+      display: flex
+    }
+
+    .modal {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      max-width: 820px;
+      width: 100%;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      position: relative;
+      animation: popUp .35s cubic-bezier(.34, 1.56, .64, 1);
+      margin: auto
+    }
+
+    @keyframes popUp {
+      from {
+        transform: scale(.92) translateY(24px);
+        opacity: 0
+      }
+
+      to {
+        transform: scale(1) translateY(0);
+        opacity: 1
+      }
+    }
+
+    .modal-x {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 34px;
+      height: 34px;
+      background: var(--linen);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text-2);
+      z-index: 5;
+      transition: .2s
+    }
+
+    .modal-x:hover {
+      background: var(--espresso);
+      color: #fff;
+      border-color: var(--espresso)
+    }
+
+    .modal-hero {
+      height: 300px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .modal-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .modal-hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(28, 25, 23, 0.70));
+      padding: 24px
+    }
+
+    .modal-body {
+      padding: 30px
+    }
+
+    .modal-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 22px
+    }
+
+    .modal-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--espresso)
+    }
+
+    .modal-price span {
+      font-size: 13px;
+      color: var(--text-3);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400
+    }
+
+    .modal-stats {
+      display: flex;
+      gap: 20px;
+      background: var(--linen);
+      border-radius: var(--r);
+      padding: 16px 22px;
+      margin-bottom: 24px;
+      flex-wrap: wrap
+    }
+
+    .m-stat {
+      text-align: center;
+      padding: 0 10px;
+      border-right: 1px solid var(--border)
+    }
+
+    .m-stat:last-child {
+      border-right: none
+    }
+
+    .m-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--espresso)
+    }
+
+    .m-stat .lbl {
+      font-size: 11px;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-top: 2px
+    }
+
+    .modal-desc {
+      font-size: 14.5px;
+      color: var(--text-2);
+      line-height: 1.85;
+      margin-bottom: 22px
+    }
+
+    .amenities-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px
+    }
+
+    .amenity {
+      background: var(--linen);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 12.5px;
+      color: var(--text-2);
+      font-weight: 500
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .modal-actions .btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-size: 14px
+    }
+
+    /* ── AUTH MODAL ── */
+    .auth-modal {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      max-width: 420px;
+      width: 100%;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      position: relative;
+      animation: popUp .35s cubic-bezier(.34, 1.56, .64, 1);
+      margin: auto
+    }
+
+    .auth-top {
+      background: var(--espresso);
+      padding: clamp(24px, 5vw, 36px);
+      border-radius: var(--r-xl) var(--r-xl) 0 0;
+      text-align: center
+    }
+
+    .auth-monogram {
+      width: 52px;
+      height: 52px;
+      background: var(--terra);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 auto 14px
+    }
+
+    .auth-top h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 3vw, 22px);
+      color: #fff;
+      margin-bottom: 4px
+    }
+
+    .auth-top p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.45)
+    }
+
+    .auth-body {
+      padding: clamp(20px, 4vw, 28px) clamp(20px, 5vw, 32px) clamp(20px, 4vw, 32px)
+    }
+
+    .auth-tabs {
+      display: flex;
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      overflow: hidden;
+      margin-bottom: 22px
+    }
+
+    .a-tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: .2s;
+      background: transparent;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-3)
+    }
+
+    .a-tab.on {
+      background: var(--espresso);
+      color: #fff;
+      border-radius: 50px
+    }
+
+    .auth-div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-3);
+      font-size: 12px;
+      margin: 16px 0
+    }
+
+    .auth-div::before,
+    .auth-div::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border)
+    }
+
+    .soc-row {
+      display: flex;
+      gap: 10px
+    }
+
+    .soc-btn {
+      flex: 1;
+      padding: 10px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      background: var(--linen);
+      cursor: pointer;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      color: var(--text-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: .2s
+    }
+
+    .soc-btn:hover {
+      border-color: var(--terra);
+      color: var(--terra)
+    }
+
+    .forgot {
+      font-size: 12px;
+      color: var(--terra);
+      text-align: right;
+      display: block;
+      margin: -6px 0 16px
+    }
+
+    .forgot:hover {
+      text-decoration: underline
+    }
+
+    /* ── FAQ ── */
+    .faq-sec {
+      background: var(--white)
+    }
+
+    .faq-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      margin-top: 52px
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 16px
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0
+    }
+
+    .faq-q {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      user-select: none
+    }
+
+    .faq-q span:first-child {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--espresso);
+      line-height: 1.5;
+      font-family: 'DM Sans', sans-serif
+    }
+
+    .faq-toggle {
+      font-size: 18px;
+      color: var(--terra);
+      flex-shrink: 0;
+      transition: .3s;
+      font-weight: 700;
+      line-height: 1
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg)
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.8;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease, margin .3s
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px;
+      margin-top: 10px
+    }
+
+    /* ── CTA BAND ── */
+    .cta-sec {
+      background: var(--terra);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 80px 5%
+    }
+
+    .cta-sec::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -60px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07)
+    }
+
+    .cta-sec::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -60px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(28, 25, 23, 0.08)
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto
+    }
+
+    .cta-sec .eyebrow {
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 16px
+    }
+
+    .cta-sec .eyebrow::before {
+      background: rgba(255, 255, 255, 0.65)
+    }
+
+    .cta-sec h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: -1px
+    }
+
+    .cta-sec p {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 34px;
+      line-height: 1.8;
+      font-weight: 300
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--terra-3);
+      padding: 15px 32px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: .2s;
+      font-family: 'DM Sans', sans-serif
+    }
+
+    .btn-white:hover {
+      background: var(--linen);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(28, 25, 23, 0.15)
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      padding: 60px 5% 28px
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px
+    }
+
+    .f-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px
+    }
+
+    .f-monogram {
+      width: 38px;
+      height: 38px;
+      background: var(--terra);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff
+    }
+
+    .f-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff
+    }
+
+    .f-name small {
+      display: block;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.30);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'DM Sans', sans-serif;
+      margin-top: 1px;
+      font-weight: 400
+    }
+
+    .f-desc {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.40);
+      line-height: 1.8;
+      margin-bottom: 20px
+    }
+
+    .f-soc {
+      display: flex;
+      gap: 8px
+    }
+
+    .f-soc a {
+      width: 34px;
+      height: 34px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 13px;
+      transition: .2s
+    }
+
+    .f-soc a:hover {
+      background: var(--terra);
+      color: #fff;
+      border-color: var(--terra)
+    }
+
+    .footer-col h5 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.25);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07)
+    }
+
+    .f-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .f-links a {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.45);
+      transition: .2s
+    }
+
+    .f-links a:hover {
+      color: var(--terra)
+    }
+
+    .footer-btm {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.22)
+    }
+
+    /* ── FLOAT / TOAST / BACK TOP ── */
+    .float-viber {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 800;
+      width: 52px;
+      height: 52px;
+      background: #665CAC;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: var(--sh-lg);
+      transition: .2s;
+      border: none;
+      cursor: pointer
+    }
+
+    .float-viber:hover {
+      background: #7B6BC0;
+      transform: scale(1.08)
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      opacity: 0;
+      background: var(--espresso);
+      color: #fff;
+      padding: 13px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: var(--sh-lg);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: .4s cubic-bezier(.34, 1.56, .64, 1);
+      max-width: 340px;
+      border: 1px solid rgba(255, 255, 255, 0.10)
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1
+    }
+
+    .t-ico {
+      width: 24px;
+      height: 24px;
+      background: var(--terra);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0
+    }
+
+    .back-top {
+      position: fixed;
+      bottom: 86px;
+      left: 22px;
+      width: 42px;
+      height: 42px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 500;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: .3s;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--espresso)
+    }
+
+    .back-top.show {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .back-top:hover {
+      background: var(--terra);
+      color: #fff;
+      border-color: var(--terra)
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px
+      }
+
+      .hero-mosaic {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px;
+        height: 220px
+      }
+
+      .mosaic-1 {
+        grid-row: span 1
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 44px
+      }
+
+      .about-img-col {
+        display: none
+      }
+
+      .props-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .testi-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px
+      }
+
+      .faq-two {
+        grid-template-columns: 1fr
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .stat-cell:nth-child(2) {
+        border-right: none
+      }
+    }
+
+    @media(max-width:768px) {
+
+      .nav-links,
+      .nav-actions {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .hero {
+        padding-top: 0
+      }
+
+      .hero-body {
+        padding: 90px 5% 56px
+      }
+
+      .props-grid {
+        grid-template-columns: 1fr
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px
+      }
+
+      .footer-btm {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center
+      }
+
+      .fgr {
+        grid-template-columns: 1fr
+      }
+
+      .modal-stats {
+        gap: 12px
+      }
+
+      .sec {
+        padding: 64px 5%
+      }
+
+      .stats-inner {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-logo" aria-label="Cebuana Broker">
-    <div class="nav-logo-icon">CB</div>
-    <div class="nav-logo-text">
-      <span>Cebuana Broker</span>
-      <span>Real Estate · Appraisal</span>
+  <!-- ══ NAV ══ -->
+  <nav id="nav" class="dark">
+    <a href="#home" class="nav-brand" aria-label="Cebuana Broker">
+      <div class="nav-monogram">C</div>
+      <div class="nav-name">Cebuana Broker<small>Real Estate · Appraisal</small></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#properties">Properties</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn btn-outline-w btn-sm" onclick="openAuth()">Sign In</button>
+      <a href="#contact" class="btn btn-terra btn-sm">Free Consult</a>
     </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#properties">Properties</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#testimonials">Clients</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-actions">
-    <button class="btn btn-outline" onclick="openAuth()">Sign In</button>
-    <a href="#contact" class="btn btn-gold">Inquire Now</a>
-  </div>
-  <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#properties" onclick="closeMenu()">Properties</a>
-  <a href="#services" onclick="closeMenu()">Services</a>
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#testimonials" onclick="closeMenu()">Clients</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
-  <div class="mobile-menu-actions">
-    <button class="btn btn-outline" onclick="openAuth();closeMenu()">Sign In</button>
-    <a href="#contact" class="btn btn-gold" onclick="closeMenu()">Inquire Now</a>
+  <div class="mob-nav" id="mobNav">
+    <a href="#properties" onclick="closeNav()">Properties</a>
+    <a href="#services" onclick="closeNav()">Services</a>
+    <a href="#about" onclick="closeNav()">About</a>
+    <a href="#testimonials" onclick="closeNav()">Clients</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
+    <div class="mob-btns">
+      <button class="btn btn-ghost btn-sm" onclick="openAuth();closeNav()">Sign In</button>
+      <a href="#contact" class="btn btn-terra btn-sm" onclick="closeNav()">Free Consult</a>
+    </div>
   </div>
-</div>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg-pattern"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-content">
-    <div class="hero-badge">🏆 PRC Licensed Broker & Appraiser</div>
-    <h1>Find Your <em>Dream</em><br>Property in Cebu</h1>
-    <p>Your trusted real estate partner for buying, selling, and property valuation across Cebu City, Mandaue, Lapu-Lapu, and Metro Cebu. Personalized service, honest advice, excellent results.</p>
-    <div class="hero-cta">
-      <a href="#properties" class="btn btn-primary">View Properties</a>
-      <a href="#contact" class="btn btn-secondary">Free Consultation</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-num">120+</span>
-        <span class="hero-stat-label">Properties Sold</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">8+</span>
-        <span class="hero-stat-label">Years Experience</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">98%</span>
-        <span class="hero-stat-label">Client Satisfaction</span>
-      </div>
-    </div>
-  </div>
-  <div class="hero-cards">
-    <div class="hero-float-card">
-      <div class="hero-float-card-icon">🏡</div>
-      <div class="hero-float-card-text">
-        <span>Latest Listing</span>
-        <span>3BR House – Banilad</span>
-      </div>
-    </div>
-    <div class="hero-float-card">
-      <div class="hero-float-card-icon">🏆</div>
-      <div class="hero-float-card-text">
-        <span>Achievement</span>
-        <span>Top Seller 2023–2024</span>
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="home">
+    <div class="hero-body">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-pill"><span class="hero-pill-dot"></span>PRC Licensed Broker & Appraiser</div>
+          <h1 class="d1 reveal">Find Your<br><em>Dream Home</em><br>in Cebu</h1>
+          <p class="hero-sub reveal reveal-delay-1">Your trusted real estate partner for buying, selling, and property
+            valuation in Cebu City, Mandaue, Lapu-Lapu, and Metro Cebu.</p>
+          <div class="hero-cta reveal reveal-delay-2">
+            <a href="#properties" class="btn btn-terra">Browse Properties</a>
+            <a href="#contact" class="btn btn-outline-w">Free Consultation</a>
+          </div>
+          <div class="hero-trust reveal reveal-delay-3">
+            <span class="trust-item"><span class="trust-dot"></span>120+ Properties Sold</span>
+            <span class="trust-item"><span class="trust-dot"></span>8+ Years Experience</span>
+            <span class="trust-item"><span class="trust-dot"></span>PRC License No. REB-0012345</span>
+          </div>
+        </div>
+        <div class="hero-mosaic reveal reveal-delay-2">
+          <div class="mosaic-1">
+            <img class="mosaic-img" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=80"
+              alt="Luxury house Cebu">
+            <div class="mosaic-badge">
+              <div class="mosaic-badge-num">120+</div>
+              <div class="mosaic-badge-label">Sold</div>
+            </div>
+          </div>
+          <div class="mosaic-2"><img class="mosaic-img"
+              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500&q=80" alt="Condo Cebu"></div>
+          <div class="mosaic-3"><img class="mosaic-img"
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=80" alt="Beach house Cebu">
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-float-card">
-      <div class="hero-float-card-icon">📋</div>
-      <div class="hero-float-card-text">
-        <span>PRC License No.</span>
-        <span>REB-0012345</span>
-      </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div><span>Scroll</span>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SEARCH -->
-<div class="search-section">
-  <div class="search-bar" role="search">
-    <select class="search-select" aria-label="Property type">
-      <option value="">All Types</option>
-      <option>House &amp; Lot</option>
-      <option>Condominium</option>
-      <option>Lot Only</option>
-      <option>Commercial</option>
-      <option>Townhouse</option>
-    </select>
-    <input class="search-input" type="text" placeholder="Search location, project name, or developer…" aria-label="Search properties">
-    <button class="search-btn" onclick="showToast('🔍 Searching properties…')">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      Search
-    </button>
+  <!-- ══ STATS BAR ══ -->
+  <div class="stats-bar" id="stats">
+    <div class="stats-inner">
+      <div class="stat-cell">
+        <div class="stat-icon">🏠</div>
+        <div>
+          <div class="stat-num" data-target="120" data-suffix="+">0</div>
+          <div class="stat-label">Properties Sold</div>
+        </div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-icon">⭐</div>
+        <div>
+          <div class="stat-num" data-target="98" data-suffix="%">0</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-icon">📋</div>
+        <div>
+          <div class="stat-num" data-target="8" data-suffix="+">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-icon">📍</div>
+        <div>
+          <div class="stat-num" data-target="6" data-suffix=" Cities">0</div>
+          <div class="stat-label">Cebu Areas Covered</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="search-filters">
-    <a href="#" class="filter-tag active" onclick="filterProp(event,'all')">All</a>
-    <a href="#" class="filter-tag" onclick="filterProp(event,'sale')">For Sale</a>
-    <a href="#" class="filter-tag" onclick="filterProp(event,'rent')">For Rent</a>
-    <a href="#" class="filter-tag" onclick="filterProp(event,'pre')">Pre-Selling</a>
-    <a href="#" class="filter-tag" onclick="filterProp(event,'house')">House &amp; Lot</a>
-    <a href="#" class="filter-tag" onclick="filterProp(event,'condo')">Condo</a>
-    <a href="#" class="filter-tag" onclick="filterProp(event,'lot')">Lot</a>
-    <a href="#" class="filter-tag" onclick="filterProp(event,'commercial')">Commercial</a>
-  </div>
-</div>
 
-<!-- PROPERTIES -->
-<section id="properties">
-  <div class="section-header">
-    <p class="section-label">Featured Listings</p>
-    <h2 class="section-title">Properties For You</h2>
-    <p class="section-sub">Carefully selected properties across Cebu — from affordable homes to premium residences and commercial spaces.</p>
-  </div>
-  <div class="properties-grid" id="propertiesGrid">
-    <!-- Cards injected by JS -->
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-header centered">
-    <p class="section-label">What We Offer</p>
-    <h2 class="section-title">Real Estate Services</h2>
-    <p class="section-sub">End-to-end real estate solutions — from finding the perfect property to accurate appraisals and legal documentation.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🏠</div>
-      <h3>Property Sales</h3>
-      <p>Assistance in buying and selling residential properties — house & lot, condominiums, townhouses, and raw lots across Cebu.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📊</div>
-      <h3>Property Appraisal</h3>
-      <p>Accurate, PRC-certified real property valuation for bank loan purposes, estate settlement, taxation, and investment decisions.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏗️</div>
-      <h3>Pre-Selling Units</h3>
-      <p>Access to exclusive pre-selling condominium and subdivision projects with the best payment schemes and developer discounts.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏢</div>
-      <h3>Commercial Leasing</h3>
-      <p>Office spaces, commercial lots, and retail units for lease. We match businesses with the right location at the right price.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📄</div>
-      <h3>Documentation & Title</h3>
-      <p>Guidance through the documentation process — deed of sale, transfer of title, BIR clearance, and notarization assistance.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">💬</div>
-      <h3>Free Consultation</h3>
-      <p>Not sure where to start? Book a free one-on-one consultation to discuss your property goals, budget, and best options.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid">
-    <div class="about-img-wrap">
-      <div class="about-img-frame">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Cebuana Broker – Real Estate Professional" loading="lazy">
+  <!-- ══ PROPERTIES ══ -->
+  <section class="props-sec sec" id="properties">
+    <div class="con">
+      <div class="reveal">
+        <p class="eyebrow">Featured Listings</p>
+        <h2 class="d2" style="color:var(--espresso)">Properties <em style="color:var(--terra)">For You</em></h2>
+        <p class="sec-sub" style="margin-bottom:32px">Handpicked properties across Cebu — from affordable homes to
+          premium residences.</p>
       </div>
-      <div class="about-accent-card">
-        <div class="big-num">8+</div>
-        <div class="small-label">Years of Trust</div>
-      </div>
-    </div>
-    <div class="about-content">
-      <p class="section-label">About Your Broker</p>
-      <h2 class="section-title">Your Trusted Cebu Real Estate Expert</h2>
-      <p>With over 8 years of hands-on experience in the Cebu real estate market, I am a PRC-licensed Real Estate Broker and Appraiser committed to making every property transaction smooth, transparent, and rewarding.</p>
-      <p>Whether you're a first-time homebuyer, an investor looking for the next big opportunity, or a seller wanting top value — I provide personalized guidance every step of the way.</p>
-      <ul class="about-list">
-        <li>PRC Licensed Real Estate Broker</li>
-        <li>Certified Real Property Appraiser (CRPA)</li>
-        <li>Accredited with major Cebu developers</li>
-        <li>Bank-accredited appraiser (BDO, BPI, Metrobank)</li>
-        <li>Member – Philippine Association of Real Estate Boards (PAREB)</li>
-      </ul>
-      <div class="license-badge">
-        <span>🪪</span>
-        <div>
-          <span>PRC License No.</span>
-          <span>REB-0012345 · Valid until 2026</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="section-header centered">
-    <p class="section-label">Client Stories</p>
-    <h2 class="section-title">What Clients Say</h2>
-    <p class="section-sub">Real experiences from real clients across Cebu who found their dream properties with us.</p>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"She helped us find our dream condo in IT Park within our budget. Super patient, very knowledgeable, and always available to answer our questions. Highly recommend!"</p>
-      <div class="testi-author">
-        <div class="testi-avatar">M</div>
-        <div>
-          <p class="testi-name">Maria Santos</p>
-          <p class="testi-role">Homebuyer – Cebu IT Park</p>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Napaka-professional niya. Gi-appraise niya ang among property para sa bank loan ug on time gyud. Accurate kaayo ug makatuo gyud ka sa iyang trabaho."</p>
-      <div class="testi-author">
-        <div class="testi-avatar">R</div>
-        <div>
-          <p class="testi-name">Ronaldo Lim</p>
-          <p class="testi-role">Property Appraisal – Mandaue</p>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"I was relocating from Manila and needed a trusted broker in Cebu. She made the entire process stress-free — from property viewing to turnover. Exceptional service!"</p>
-      <div class="testi-author">
-        <div class="testi-avatar">J</div>
-        <div>
-          <p class="testi-name">Jessica Reyes</p>
-          <p class="testi-role">House & Lot Buyer – Talisay</p>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Naka-sell mi sa among lot within 3 months lang! Ang iyang marketing ug negotiation skills pang-world class. Thank you so much, madam!"</p>
-      <div class="testi-author">
-        <div class="testi-avatar">A</div>
-        <div>
-          <p class="testi-name">Arvin & Gina Cruz</p>
-          <p class="testi-role">Lot Sellers – Consolacion</p>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Best real estate broker in Cebu hands down. She went above and beyond — even assisted us with the BIR requirements and transfer of title. True professional!"</p>
-      <div class="testi-author">
-        <div class="testi-avatar">K</div>
-        <div>
-          <p class="testi-name">Kevin Ong</p>
-          <p class="testi-role">Condo Investor – Mabolo</p>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Gi-recommend nako siya sa tanan kong friends. Honest kaayo ug di siya magpugos. Kua ang property na perfect para sa inyong budget ug needs."</p>
-      <div class="testi-author">
-        <div class="testi-avatar">L</div>
-        <div>
-          <p class="testi-name">Luz Fernandez</p>
-          <p class="testi-role">Repeat Client – Cebu City</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-grid">
-    <div class="contact-info">
-      <p class="section-label">Get In Touch</p>
-      <h2 class="section-title">Let's Find Your Perfect Property</h2>
-      <p class="section-sub">Ready to buy, sell, or need an appraisal? Send a message or reach out directly — free consultation available!</p>
-      <div class="contact-detail">
-        <div class="contact-icon">📞</div>
-        <div>
-          <h4>Phone / Viber</h4>
-          <a href="tel:+639XXXXXXXXX" class="contact-link">+63 9XX XXX XXXX</a>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-icon">✉️</div>
-        <div>
-          <h4>Email</h4>
-          <a href="mailto:cebuana@example.com" class="contact-link">cebuana@cebuanabroker.com</a>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-icon">📍</div>
-        <div>
-          <h4>Service Area</h4>
-          <p>Cebu City · Mandaue · Lapu-Lapu · Talisay · Consolacion · Liloan · Nationwide</p>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-icon">🕒</div>
-        <div>
-          <h4>Office Hours</h4>
-          <p>Monday – Saturday, 9:00 AM – 6:00 PM</p>
-        </div>
-      </div>
-    </div>
-    <div class="contact-form">
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:24px">Send an Inquiry</h3>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" placeholder="Juan">
-        </div>
-        <div class="form-group">
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" placeholder="dela Cruz">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="juan@email.com">
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone / Viber</label>
-        <input type="tel" id="phone" placeholder="+63 9XX XXX XXXX">
-      </div>
-      <div class="form-group">
-        <label for="interest">I'm Interested In</label>
-        <select id="interest">
-          <option value="">Select transaction type</option>
-          <option>Buying a Property</option>
-          <option>Selling a Property</option>
-          <option>Property Appraisal</option>
-          <option>Rental / Lease</option>
-          <option>Pre-Selling Condo / Subdivision</option>
-          <option>General Inquiry</option>
+      <!-- SEARCH BAR -->
+      <div class="reveal reveal-delay-1"
+        style="display:flex;gap:0;border:1.5px solid var(--border);border-radius:50px;overflow:hidden;background:var(--white);box-shadow:var(--sh);max-width:700px;margin-bottom:24px">
+        <select
+          style="border:none;outline:none;padding:14px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text-2);background:transparent;border-right:1.5px solid var(--border);min-width:140px;cursor:pointer">
+          <option>All Types</option>
+          <option>House & Lot</option>
+          <option>Condominium</option>
+          <option>Lot Only</option>
+          <option>Commercial</option>
         </select>
+        <input type="text" placeholder="Search location or project name…"
+          style="flex:1;border:none;outline:none;padding:14px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:transparent">
+        <button class="btn btn-terra" style="border-radius:0 50px 50px 0;padding:14px 28px;font-size:13px"
+          onclick="toast('🔍 Searching…')">Search</button>
       </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" placeholder="Tell me about your property goals, budget range, preferred location…"></textarea>
+      <div class="props-filter reveal reveal-delay-1">
+        <button class="filter-btn on" onclick="filterProps(this,'all')">All</button>
+        <button class="filter-btn" onclick="filterProps(this,'sale')">For Sale</button>
+        <button class="filter-btn" onclick="filterProps(this,'rent')">For Rent</button>
+        <button class="filter-btn" onclick="filterProps(this,'pre')">Pre-Selling</button>
+        <button class="filter-btn" onclick="filterProps(this,'house')">House & Lot</button>
+        <button class="filter-btn" onclick="filterProps(this,'condo')">Condo</button>
+        <button class="filter-btn" onclick="filterProps(this,'lot')">Lot</button>
       </div>
-      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitInquiry()">Send Inquiry 📤</button>
+      <div class="props-grid" id="propsGrid"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="#" class="nav-logo" aria-label="Cebuana Broker">
-        <div class="nav-logo-icon">CB</div>
-        <div class="nav-logo-text">
-          <span>Cebuana Broker</span>
-          <span>Real Estate · Appraisal</span>
+  <!-- ══ ABOUT ══ -->
+  <section class="about-sec sec" id="about">
+    <div class="about-inner con">
+      <div class="about-img-col reveal">
+        <div class="about-img-frame">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+            alt="Cebuana Broker – Real Estate Professional">
         </div>
-      </a>
-      <p>Your trusted PRC-licensed Real Estate Broker and Appraiser in Cebu. Helping families and investors find the right property since 2017.</p>
-      <div class="footer-social">
-        <a href="#" class="social-btn" aria-label="Facebook">f</a>
-        <a href="#" class="social-btn" aria-label="Instagram">📸</a>
-        <a href="#" class="social-btn" aria-label="Viber">📱</a>
-        <a href="#" class="social-btn" aria-label="YouTube">▶</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Properties</h4>
-      <ul class="footer-links">
-        <li><a href="#properties">House &amp; Lot</a></li>
-        <li><a href="#properties">Condominium</a></li>
-        <li><a href="#properties">Lot Only</a></li>
-        <li><a href="#properties">Commercial</a></li>
-        <li><a href="#properties">Pre-Selling</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul class="footer-links">
-        <li><a href="#services">Property Sales</a></li>
-        <li><a href="#services">Appraisal</a></li>
-        <li><a href="#services">Commercial Lease</a></li>
-        <li><a href="#services">Documentation</a></li>
-        <li><a href="#services">Free Consultation</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#testimonials">Client Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#" onclick="openAuth()">Sign In / Register</a></li>
-        <li><a href="https://www.prc.gov.ph" target="_blank" rel="noopener">PRC Verify License</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 Cebuana Broker. All rights reserved. PRC Licensed Real Estate Broker & Appraiser – Cebu, Philippines.</span>
-    <span>SEO-optimized · Powered by GHL Marketing</span>
-  </div>
-</footer>
-
-<!-- PROPERTY MODAL -->
-<div class="modal-overlay" id="propModal" role="dialog" aria-modal="true" aria-label="Property details">
-  <div class="modal" id="propModalContent">
-    <button class="modal-close" onclick="closeModal('propModal')" aria-label="Close">✕</button>
-    <div class="modal-gallery">
-      <img id="modalImg" src="" alt="Property photo">
-      <div class="modal-gallery-overlay">
-        <div class="modal-badge-row" id="modalBadges"></div>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div style="margin-bottom:8px"><span id="modalType" style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)"></span></div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:6px" id="modalName"></h2>
-      <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:16px" id="modalLoc">📍 </p>
-      <div class="modal-price-row">
-        <div class="modal-price" id="modalPrice"></div>
-        <button class="modal-fav-btn" id="modalFavBtn" onclick="toggleModalFav()" aria-label="Favorite">🤍</button>
-      </div>
-      <div class="modal-features" id="modalFeatures"></div>
-      <p class="modal-desc" id="modalDesc"></p>
-      <div class="modal-amenities" id="modalAmenities"></div>
-      <div class="modal-cta">
-        <button class="btn btn-gold" onclick="closeModal('propModal');document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📞 Inquire Now</button>
-        <button class="btn btn-navy" onclick="showToast('📅 Viewing request sent!')">🏡 Schedule Viewing</button>
-        <button class="btn btn-outline" style="color:var(--navy);border-color:var(--border)" onclick="shareProperty()">🔗 Share</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- AUTH MODAL -->
-<div class="modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-label="Sign In or Register">
-  <div class="auth-modal">
-    <button class="modal-close" onclick="closeModal('authModal')" style="top:14px;right:14px" aria-label="Close">✕</button>
-    <div class="auth-header">
-      <div class="auth-logo">CB</div>
-      <h2>Welcome Back</h2>
-      <p>Sign in to save properties and track inquiries</p>
-    </div>
-    <div class="auth-body">
-      <div class="auth-tabs">
-        <button class="auth-tab active" onclick="switchTab('login')">Sign In</button>
-        <button class="auth-tab" onclick="switchTab('register')">Register</button>
-      </div>
-      <div id="loginForm">
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com">
+        <div class="about-badge">
+          <div class="big">8+</div>
+          <div class="small">Years of Trust</div>
         </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" placeholder="Enter your password">
+        <div class="about-badge2">
+          <div class="b2-row">🏆 Top Seller</div>
+          <div class="b2-sub">2023 · 2024</div>
         </div>
-        <a href="#" class="auth-forgot">Forgot password?</a>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:16px" onclick="fakeLogin()">Sign In</button>
       </div>
-      <div id="registerForm" style="display:none">
-        <div class="form-row">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="Juan"></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Santos"></div>
+      <div class="reveal reveal-delay-1">
+        <p class="eyebrow">About Your Broker</p>
+        <h2 class="d2" style="color:var(--espresso);margin-bottom:18px">Your Trusted<br><em
+            style="color:var(--terra)">Cebu Expert</em></h2>
+        <p style="font-size:15px;color:var(--text-2);line-height:1.85;margin-bottom:12px">With over 8 years of hands-on
+          experience in the Cebu real estate market, I am a PRC-licensed Real Estate Broker and Appraiser committed to
+          making every property transaction smooth, transparent, and rewarding.</p>
+        <p style="font-size:15px;color:var(--text-2);line-height:1.85">Whether you're a first-time homebuyer, an
+          investor, or a seller wanting top value — I provide personalized guidance every step of the way.</p>
+        <ul class="about-list">
+          <li>PRC Licensed Real Estate Broker</li>
+          <li>Certified Real Property Appraiser (CRPA)</li>
+          <li>Accredited with major Cebu developers</li>
+          <li>Bank-accredited appraiser (BDO, BPI, Metrobank)</li>
+          <li>Member – PAREB (Philippine Association of Real Estate Boards)</li>
+        </ul>
+        <div class="about-cert">
+          <span class="cert-chip">🪪 PRC License REB-0012345</span>
+          <span class="cert-chip">Valid until 2026</span>
+          <span class="cert-chip">CRPA Certified</span>
+          <span class="cert-chip">PAREB Member</span>
         </div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="juan@email.com"></div>
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+63 9XX XXX XXXX"></div>
-        <div class="form-group"><label>Password</label><input type="password" placeholder="Create a password"></div>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:16px" onclick="fakeLogin()">Create Account</button>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+          <a href="#contact" class="btn btn-terra">Book Consultation</a>
+          <a href="#properties" class="btn btn-outline-e">View Properties</a>
+        </div>
       </div>
-      <div class="auth-divider">or continue with</div>
-      <div class="auth-social">
-        <button class="auth-social-btn" onclick="showToast('Google sign-in coming soon')">🔍 Google</button>
-        <button class="auth-social-btn" onclick="showToast('Facebook sign-in coming soon')">f Facebook</button>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES ══ -->
+  <section class="services-sec sec" id="services">
+    <div class="con">
+      <div class="sec-head reveal" style="text-align:center;margin-bottom:52px">
+        <p class="eyebrow" style="justify-content:center">What We Offer</p>
+        <h2 class="d2" style="color:var(--espresso)">Real Estate <em style="color:var(--terra)">Services</em></h2>
+        <p class="sec-sub" style="margin:10px auto 0">End-to-end real estate solutions from finding your property to
+          complete appraisals.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card reveal">
+          <div class="svc-icon">🏠</div>
+          <h3>Property Sales</h3>
+          <p>Assistance buying and selling residential properties — house & lot, condominiums, townhouses, and raw lots
+            across Cebu and nearby provinces.</p>
+        </div>
+        <div class="svc-card reveal reveal-delay-1">
+          <div class="svc-icon">📊</div>
+          <h3>Property Appraisal</h3>
+          <p>Accurate, PRC-certified real property valuation for bank loans, estate settlements, taxation, and
+            investment decision-making.</p>
+        </div>
+        <div class="svc-card reveal reveal-delay-2">
+          <div class="svc-icon">🏗️</div>
+          <h3>Pre-Selling Units</h3>
+          <p>Exclusive access to pre-selling condominium and subdivision projects with the best developer payment
+            schemes and discounts.</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">🏢</div>
+          <h3>Commercial Leasing</h3>
+          <p>Office spaces, commercial lots, and retail units for lease. We match businesses with the right location at
+            the best price.</p>
+        </div>
+        <div class="svc-card reveal reveal-delay-1">
+          <div class="svc-icon">📄</div>
+          <h3>Documentation & Title</h3>
+          <p>Full guidance through deed of sale, title transfer, BIR clearance, notarization, and all post-sale
+            documentation requirements.</p>
+        </div>
+        <div class="svc-card reveal reveal-delay-2">
+          <div class="svc-icon">💬</div>
+          <h3>Free Consultation</h3>
+          <p>Not sure where to start? Book a free one-on-one consultation to discuss your property goals, budget, and
+            best available options.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="testi-sec sec" id="testimonials">
+    <div class="con">
+      <div class="sec-head reveal" style="text-align:center;margin-bottom:52px">
+        <p class="eyebrow" style="justify-content:center;color:rgba(255,255,255,0.45)"><span
+            style="background:rgba(255,255,255,0.45);width:24px;height:1px;display:inline-block"></span> Client Stories
+        </p>
+        <h2 class="d2" style="color:#fff">What <em style="color:var(--terra)">Clients</em> Say</h2>
+        <p class="sec-sub" style="color:rgba(255,255,255,0.50);margin:10px auto 0">Real experiences from real clients
+          across Cebu who found their dream properties.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal"><span class="tq">"</span>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">She helped us find our dream condo in IT Park within our budget. Super patient and
+            always available to answer our questions. Highly recommend!</p>
+          <div class="testi-author">
+            <div class="testi-av">M</div>
+            <div>
+              <p class="testi-name">Maria Santos</p>
+              <p class="testi-role">Homebuyer – Cebu IT Park</p>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card featured reveal reveal-delay-1"><span class="tq">"</span>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Napaka-professional niya. Gi-appraise niya ang among property para sa bank loan ug on
+            time gyud. Accurate kaayo ug makatuo gyud ka sa iyang trabaho.</p>
+          <div class="testi-author">
+            <div class="testi-av">R</div>
+            <div>
+              <p class="testi-name">Ronaldo Lim</p>
+              <p class="testi-role">Property Appraisal – Mandaue</p>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal reveal-delay-2"><span class="tq">"</span>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">I was relocating from Manila and needed a trusted broker in Cebu. She made the entire
+            process stress-free — from viewing to turnover. Exceptional!</p>
+          <div class="testi-author">
+            <div class="testi-av">J</div>
+            <div>
+              <p class="testi-name">Jessica Reyes</p>
+              <p class="testi-role">House & Lot – Talisay</p>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal"><span class="tq">"</span>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Naka-sell mi sa among lot within 3 months lang! Ang iyang marketing ug negotiation
+            skills pang-world class. Thank you so much, madam!</p>
+          <div class="testi-author">
+            <div class="testi-av">A</div>
+            <div>
+              <p class="testi-name">Arvin & Gina Cruz</p>
+              <p class="testi-role">Lot Sellers – Consolacion</p>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal reveal-delay-1"><span class="tq">"</span>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Best real estate broker in Cebu hands down. She went above and beyond — even assisted
+            with BIR requirements and transfer of title. True professional!</p>
+          <div class="testi-author">
+            <div class="testi-av">K</div>
+            <div>
+              <p class="testi-name">Kevin Ong</p>
+              <p class="testi-role">Condo Investor – Mabolo</p>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal reveal-delay-2"><span class="tq">"</span>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Gi-recommend nako siya sa tanan kong friends. Honest kaayo ug di siya magpugos. Kua ang
+            property na perfect para sa inyong budget.</p>
+          <div class="testi-author">
+            <div class="testi-av">L</div>
+            <div>
+              <p class="testi-name">Luz Fernandez</p>
+              <p class="testi-role">Repeat Client – Cebu City</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section class="contact-sec sec" id="contact">
+    <div class="con">
+      <div class="contact-inner">
+        <div class="reveal">
+          <p class="eyebrow">Get In Touch</p>
+          <h2 class="d2" style="color:var(--espresso);margin-bottom:10px">Let's Find Your<br><em
+              style="color:var(--terra)">Perfect Property</em></h2>
+          <p style="font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:6px">Ready to buy, sell, or need an
+            appraisal? Reach out — free consultation available!</p>
+          <div class="contact-cards">
+            <div class="c-card">
+              <div class="c-ico">📞</div>
+              <div>
+                <h4>Phone / Viber</h4><a href="tel:+639XXXXXXXXX">+63 9XX XXX XXXX</a>
+              </div>
+            </div>
+            <div class="c-card">
+              <div class="c-ico">✉️</div>
+              <div>
+                <h4>Email</h4><a href="mailto:cebuana@cebuanabroker.com">cebuana@cebuanabroker.com</a>
+              </div>
+            </div>
+            <div class="c-card">
+              <div class="c-ico">📍</div>
+              <div>
+                <h4>Service Area</h4>
+                <p style="font-size:14px;color:var(--text-2)">Cebu City · Mandaue · Lapu-Lapu · Talisay · Consolacion ·
+                  Nationwide</p>
+              </div>
+            </div>
+            <div class="c-card">
+              <div class="c-ico">🕒</div>
+              <div>
+                <h4>Office Hours</h4>
+                <p style="font-size:14px;color:var(--text-2)">Mon – Sat · 9:00 AM – 6:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lead-form reveal reveal-delay-1">
+          <h3>Send an Inquiry</h3>
+          <p class="sub">Tell us about your property goals and we'll get back to you within 24 hours.</p>
+          <div class="fgr">
+            <div class="fg"><label>First Name</label><input type="text" id="fn" placeholder="Juan"></div>
+            <div class="fg"><label>Last Name</label><input type="text" id="ln" placeholder="dela Cruz"></div>
+          </div>
+          <div class="fg"><label>Email</label><input type="email" id="em" placeholder="juan@email.com"></div>
+          <div class="fg"><label>Phone / Viber</label><input type="tel" id="ph" placeholder="+63 9XX XXX XXXX"></div>
+          <div class="fg"><label>I'm Interested In</label>
+            <select id="sv">
+              <option value="">Select transaction type</option>
+              <option>Buying a Property</option>
+              <option>Selling a Property</option>
+              <option>Property Appraisal</option>
+              <option>Pre-Selling Condo / Subdivision</option>
+              <option>Rental / Lease</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div class="fg"><label>Message</label><textarea id="mg"
+              placeholder="Tell me about your property goals, preferred location, budget range…"></textarea></div>
+          <button class="btn btn-terra" style="width:100%;padding:15px;border-radius:12px;font-size:15px"
+            onclick="submitLead()">Send Inquiry ✉️</button>
+          <p style="font-size:11px;color:var(--text-3);text-align:center;margin-top:12px;line-height:1.6">Your
+            information is private and used only to respond to your inquiry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section class="faq-sec sec" id="faq">
+    <div class="con">
+      <div class="reveal" style="text-align:center;margin-bottom:0">
+        <p class="eyebrow" style="justify-content:center">FAQ</p>
+        <h2 class="d2" style="color:var(--espresso)">Common <em style="color:var(--terra)">Questions</em></h2>
+      </div>
+      <div class="faq-two">
+        <div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>How much is your broker's commission?</span><span class="faq-toggle">+</span></div>
+            <div class="faq-a">Standard broker's commission follows PRC guidelines — typically 3–5% for property sales
+              and 1 month's rent for lease transactions. We discuss fees transparently before any engagement and confirm
+              in writing.</div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>Are you PRC licensed?</span><span class="faq-toggle">+</span></div>
+            <div class="faq-a">Yes — I hold an active PRC Real Estate Broker license (REB-0012345, valid until 2026) and
+              am also a Certified Real Property Appraiser (CRPA). All license details are available on request or
+              verifiable via the PRC website.</div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>Is the initial consultation free?</span><span class="faq-toggle">+</span></div>
+            <div class="faq-a">Absolutely — the initial consultation is completely free. We meet in person or online to
+              understand your needs and present the best options available before any fee is involved.</div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>Can you help OFWs buy property remotely?</span><span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-a">Yes! We assist many OFW clients with remote property purchases. Virtual tours, online
+              document processing, and SPA (Special Power of Attorney) arrangements are all part of our service for
+              overseas buyers.</div>
+          </div>
+        </div>
+        <div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>What documents do I need to buy a property?</span><span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-a">For residential purchases you'll need: valid government ID, TIN, proof of income (ITR or
+              payslip), and bank statements. For OFWs add: employment contract and OFW ID. We guide you through every
+              document from start to title transfer.</div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>How long does a property appraisal take?</span><span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-a">A standard residential appraisal takes 3–5 business days from the site visit to receipt
+              of the signed and sealed appraisal report. Rush appraisals (1–2 days) are available for an additional fee.
+            </div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>Which banks accept your appraisal reports?</span><span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-a">We are accredited appraisers with BDO, BPI, Metrobank, UnionBank, and several rural banks
+              in Cebu. Our reports are accepted for home loans, business loans, and estate settlement valuations.</div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>Can you help me sell my property faster?</span><span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-a">Yes — we use a multi-channel marketing strategy: professional photography, GHL-powered
+              lead generation, social media advertising, and our curated buyer database. Most properties we list receive
+              qualified offers within 30–90 days.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-sec">
+    <div class="cta-inner">
+      <p class="eyebrow">Ready to Start?</p>
+      <h2>Your Dream Property<br>is One Call Away</h2>
+      <p>Book a free consultation today and let's find exactly what you're looking for — with honesty, experience, and
+        care.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+          Free Consultation</button>
+        <a href="#properties" class="btn btn-outline-w">View All Properties</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="f-brand-row">
+            <div class="f-monogram">C</div>
+            <div class="f-name">Cebuana Broker<small>Real Estate · Appraisal</small></div>
+          </div>
+          <p class="f-desc">Your trusted PRC-licensed Real Estate Broker and Appraiser in Cebu. Helping families and
+            investors find the right property since 2017.</p>
+          <div class="f-soc">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Viber">📱</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Properties</h5>
+          <ul class="f-links">
+            <li><a href="#properties">House & Lot</a></li>
+            <li><a href="#properties">Condominium</a></li>
+            <li><a href="#properties">Lot Only</a></li>
+            <li><a href="#properties">Commercial</a></li>
+            <li><a href="#properties">Pre-Selling</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul class="f-links">
+            <li><a href="#services">Property Sales</a></li>
+            <li><a href="#services">Appraisal</a></li>
+            <li><a href="#services">Commercial Lease</a></li>
+            <li><a href="#services">Documentation</a></li>
+            <li><a href="#services">Free Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul class="f-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Client Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" onclick="openAuth()">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-btm"><span>© 2025 Cebuana Broker. All rights reserved. PRC Licensed Broker & Appraiser –
+          Cebu.</span><span>SEO Optimized · GHL Ready</span></div>
+    </div>
+  </footer>
+
+  <!-- ══ PROPERTY MODAL ══ -->
+  <div class="modal-overlay" id="propModal">
+    <div class="modal">
+      <button class="modal-x" onclick="closeModal('propModal')" aria-label="Close">✕</button>
+      <div class="modal-hero"><img id="mImg" src="" alt="Property">
+        <div class="modal-hero-overlay">
+          <div style="display:flex;gap:8px" id="mBadges"></div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div
+          style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:5px"
+          id="mType"></div>
+        <h2 class="serif" style="font-size:22px;color:var(--espresso);margin-bottom:5px" id="mName"></h2>
+        <p style="font-size:13px;color:var(--text-3);margin-bottom:16px" id="mLoc"></p>
+        <div class="modal-price-row">
+          <div class="modal-price" id="mPrice"></div><button onclick="toggleFav(null,null,true)"
+            style="width:40px;height:40px;border-radius:10px;border:1.5px solid var(--border);background:var(--white);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center"
+            id="mFavBtn">🤍</button>
+        </div>
+        <div class="modal-stats" id="mStats"></div>
+        <p class="modal-desc" id="mDesc"></p>
+        <div class="amenities-row" id="mAmenities"></div>
+        <div class="modal-actions">
+          <button class="btn btn-terra"
+            onclick="closeModal('propModal');document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📞
+            Inquire Now</button>
+          <button class="btn btn-outline-e" onclick="toast('📅 Viewing request sent!')">🏡 Schedule Viewing</button>
+          <button class="btn btn-ghost" onclick="toast('🔗 Link copied!')">🔗 Share</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- BACK TO TOP -->
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+  <!-- ══ AUTH MODAL ══ -->
+  <div class="modal-overlay" id="authModal">
+    <div class="auth-modal">
+      <button class="modal-x" onclick="closeModal('authModal')"
+        style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.70);top:14px;right:14px"
+        aria-label="Close">✕</button>
+      <div class="auth-top">
+        <div class="auth-monogram">C</div>
+        <h2>Welcome Back</h2>
+        <p>Sign in to save properties & track inquiries</p>
+      </div>
+      <div class="auth-body">
+        <div class="auth-tabs"><button class="a-tab on" onclick="switchTab(event,'lf')">Sign In</button><button
+            class="a-tab" onclick="switchTab(event,'rf')">Register</button></div>
+        <div id="lf">
+          <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+          <div class="fg"><label>Password</label><input type="password" placeholder="Enter your password"></div>
+          <a href="#" class="forgot">Forgot password?</a>
+          <button class="btn btn-terra"
+            style="width:100%;padding:13px;border-radius:10px;margin-bottom:14px;font-size:14px"
+            onclick="fakeLogin()">Sign In</button>
+        </div>
+        <div id="rf" style="display:none">
+          <div class="fgr">
+            <div class="fg"><label>First Name</label><input type="text" placeholder="Juan"></div>
+            <div class="fg"><label>Last Name</label><input type="text" placeholder="Santos"></div>
+          </div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="juan@email.com"></div>
+          <div class="fg"><label>Phone</label><input type="tel" placeholder="+63 9XX XXX XXXX"></div>
+          <div class="fg"><label>Password</label><input type="password" placeholder="Create a password"></div>
+          <button class="btn btn-terra"
+            style="width:100%;padding:13px;border-radius:10px;margin-bottom:14px;font-size:14px"
+            onclick="fakeLogin()">Create Account</button>
+        </div>
+        <div class="auth-div">or continue with</div>
+        <div class="soc-row">
+          <button class="soc-btn" onclick="toast('Google sign-in coming soon')">🔍 Google</button>
+          <button class="soc-btn" onclick="toast('Facebook sign-in coming soon')">f Facebook</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- TOAST -->
-<div class="toast" id="toast">
-  <div class="toast-icon">✓</div>
-  <span id="toastMsg"></span>
-</div>
+  <!-- TOAST / FLOAT / BACK TOP -->
+  <div class="toast" id="toastEl">
+    <div class="t-ico">✓</div><span id="toastMsg"></span>
+  </div>
+  <button class="float-viber" onclick="toast('Opening Viber…')" aria-label="Message on Viber">💬</button>
+  <button class="back-top" id="backBtn" onclick="scrollTo({top:0,behavior:'smooth'})"
+    aria-label="Back to top">↑</button>
 
-<script>
-const properties = [
-  {id:1,name:"The Residences at Banilad",type:"House & Lot",badge:"sale",loc:"Banilad, Cebu City",price:"₱ 8,500,000",beds:3,baths:2,area:180,lot:120,img:"https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",desc:"A beautifully designed 3-bedroom family home in the prestigious Banilad area. Features a modern open-plan living and dining area, spacious kitchen with granite countertops, and a landscaped garden. Walking distance to top schools and malls.",amenities:["Garage x2","Garden","CCTV","Water Heater","Balcony","Back Patio"]},
-  {id:2,name:"Azure Heights Condominium",type:"Condominium",badge:"pre",loc:"IT Park, Lahug, Cebu City",price:"₱ 4,200,000",beds:1,baths:1,area:45,lot:null,img:"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",desc:"Premium pre-selling condominium unit at the heart of IT Park. Enjoy resort-style amenities, stunning city views, and a convenient location surrounded by dining, entertainment, and offices.",amenities:["Pool","Gym","Function Hall","24/7 Security","Concierge","Parking"]},
-  {id:3,name:"Casa Verde Townhouse",type:"Townhouse",badge:"sale",loc:"Talamban, Cebu City",price:"₱ 3,800,000",beds:3,baths:2,area:120,lot:60,img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",desc:"Modern 3-bedroom end-unit townhouse in a gated community in Talamban. Features a second floor balcony, covered garage, and a private garden. Very close to Cebu IT Park and SM Seaside.",amenities:["Covered Garage","Garden","CCTV","Gated Community","Balcony"]},
-  {id:4,name:"Primavera Lot – Consolacion",type:"Lot Only",badge:"sale",loc:"Consolacion, Cebu",price:"₱ 1,200,000",beds:null,baths:null,area:200,lot:200,img:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",desc:"Titled residential lot in a fast-growing area in Consolacion — one of Cebu's most in-demand real estate locations. Ideal for building your dream home or investment. Clean title, ready for construction.",amenities:["Clean Title","Corner Lot","Road Access","Flat Terrain","Near Highway"]},
-  {id:5,name:"Mandaue Commercial Space",type:"Commercial",badge:"rent",loc:"A.C. Cortes Ave, Mandaue City",price:"₱ 45,000/mo",beds:null,baths:2,area:150,lot:null,img:"https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",desc:"Ground floor commercial space along the main commercial corridor in Mandaue City. Perfect for retail, restaurant, clinic, or office use. High foot traffic area, great signage visibility, and ample parking.",amenities:["Ground Floor","Parking","Restroom","Loading Bay","Signage Area"]},
-  {id:6,name:"Sunridge Subdivision – Talisay",type:"House & Lot",badge:"pre",loc:"Talisay City, Cebu",price:"₱ 2,950,000",beds:2,baths:1,area:65,lot:80,img:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",desc:"Affordable pre-selling house and lot in a peaceful, secured subdivision in Talisay. Flexible payment terms with as low as 10% down payment. Perfect for young families and OFW investors.",amenities:["Gated","Playground","Basketball Court","Covered Carport","Solar-Ready"]},
-  {id:7,name:"Sky View Studio – Mabolo",type:"Condominium",badge:"rent",loc:"Mabolo, Cebu City",price:"₱ 18,000/mo",beds:1,baths:1,area:32,lot:null,img:"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",desc:"Fully furnished studio unit on a high floor with panoramic Cebu City views. Ideal for professionals and digital nomads. Utilities included. Access to rooftop pool and fitness center.",amenities:["Fully Furnished","Pool Access","Gym","High Floor","Utilities Included","WiFi Ready"]},
-  {id:8,name:"Lapu-Lapu Beach House",type:"House & Lot",badge:"sale",loc:"Mactan, Lapu-Lapu City",price:"₱ 12,800,000",beds:4,baths:3,area:280,lot:400,img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",desc:"Exclusive beachfront property in Mactan Island — your own private paradise. 4 spacious bedrooms, 3 bathrooms, large outdoor deck facing the sea, and a private garden. Very rare find. Ideal for vacation home or Airbnb.",amenities:["Beach Access","Pool","Deck","Outdoor BBQ","4-Car Garage","Generator"]}
-];
+  <script>
+    /* ── DATA ── */
+    const PROPS = [
+      { id: 1, name: "The Residences at Banilad", type: "House & Lot", badge: "sale", loc: "Banilad, Cebu City", price: "₱ 8,500,000", beds: 3, baths: 2, area: 180, lot: 120, img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80", desc: "A beautifully designed 3-bedroom family home in prestigious Banilad. Modern open-plan living, spacious kitchen with granite countertops, and landscaped garden. Walking distance to top schools and malls.", amenities: ["Garage x2", "Garden", "CCTV", "Water Heater", "Balcony"] },
+      { id: 2, name: "Azure Heights Condominium", type: "Condominium", badge: "pre", loc: "IT Park, Lahug, Cebu City", price: "₱ 4,200,000", beds: 1, baths: 1, area: 45, lot: null, img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80", desc: "Premium pre-selling condominium at the heart of IT Park. Resort-style amenities, stunning city views, and a prime location surrounded by dining and offices.", amenities: ["Pool", "Gym", "Function Hall", "24/7 Security", "Parking"] },
+      { id: 3, name: "Casa Verde Townhouse", type: "Townhouse", badge: "sale", loc: "Talamban, Cebu City", price: "₱ 3,800,000", beds: 3, baths: 2, area: 120, lot: 60, img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80", desc: "Modern 3-bedroom end-unit townhouse in a gated community in Talamban. Second-floor balcony, covered garage, and private garden. Very close to IT Park.", amenities: ["Covered Garage", "Garden", "CCTV", "Gated", "Balcony"] },
+      { id: 4, name: "Primavera Lot – Consolacion", type: "Lot Only", badge: "sale", loc: "Consolacion, Cebu", price: "₱ 1,200,000", beds: null, baths: null, area: 200, lot: 200, img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80", desc: "Titled residential lot in fast-growing Consolacion. Ideal for building your dream home or as an investment. Clean title, ready for construction.", amenities: ["Clean Title", "Corner Lot", "Road Access", "Flat Terrain"] },
+      { id: 5, name: "Mandaue Commercial Space", type: "Commercial", badge: "rent", loc: "A.C. Cortes Ave, Mandaue", price: "₱ 45,000/mo", beds: null, baths: 2, area: 150, lot: null, img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80", desc: "Ground floor commercial space along the main commercial corridor in Mandaue City. Perfect for retail, restaurant, clinic, or office. High foot traffic.", amenities: ["Ground Floor", "Parking", "Restroom", "Signage Area"] },
+      { id: 6, name: "Sunridge Subdivision", type: "House & Lot", badge: "pre", loc: "Talisay City, Cebu", price: "₱ 2,950,000", beds: 2, baths: 1, area: 65, lot: 80, img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80", desc: "Affordable pre-selling house and lot in peaceful Talisay. Flexible payment terms with as low as 10% down payment. Perfect for young families.", amenities: ["Gated", "Playground", "Basketball Court", "Covered Carport"] },
+      { id: 7, name: "Sky View Studio – Mabolo", type: "Condominium", badge: "rent", loc: "Mabolo, Cebu City", price: "₱ 18,000/mo", beds: 1, baths: 1, area: 32, lot: null, img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80", desc: "Fully furnished studio on a high floor with panoramic city views. Ideal for professionals. Utilities included. Access to rooftop pool and gym.", amenities: ["Fully Furnished", "Pool", "Gym", "Utilities Included", "WiFi Ready"] },
+      { id: 8, name: "Lapu-Lapu Beach House", type: "House & Lot", badge: "sale", loc: "Mactan, Lapu-Lapu City", price: "₱ 12,800,000", beds: 4, baths: 3, area: 280, lot: 400, img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80", desc: "Exclusive beachfront property in Mactan Island. 4 bedrooms, 3 bathrooms, large outdoor deck facing the sea. Ideal for vacation home or Airbnb.", amenities: ["Beach Access", "Pool", "Deck", "Outdoor BBQ", "Generator"] }
+    ];
+    let favs = new Set(), curProp = null;
 
-let currentPropId = null;
-let favorites = new Set();
-
-function createCard(p){
-  const favActive = favorites.has(p.id) ? 'active' : '';
-  const favIcon = favorites.has(p.id) ? '❤️' : '🤍';
-  const badgeMap = {sale:'badge-sale',rent:'badge-rent',pre:'badge-pre',sold:'badge-sold'};
-  const badgeLabel = {sale:'For Sale',rent:'For Rent',pre:'Pre-Selling',sold:'Sold'};
-  const feats = [];
-  if(p.beds !== null) feats.push(`<span class="prop-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9V5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v4M2 9h20M2 9v10M22 9v10M7 9v6M17 9v6"/></svg>${p.beds} Bed${p.beds>1?'s':''}</span>`);
-  if(p.baths !== null) feats.push(`<span class="prop-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>${p.baths} Bath${p.baths>1?'s':''}</span>`);
-  feats.push(`<span class="prop-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>${p.area}m²</span>`);
-  return `<div class="property-card" data-badge="${p.badge}" data-type="${p.type.toLowerCase()}" onclick="openPropModal(${p.id})" tabindex="0" role="button" aria-label="View ${p.name}">
-    <div class="property-img-wrap">
+    function makeCard(p) {
+      const bMap = { sale: 'status-sale', rent: 'status-rent', pre: 'status-pre' };
+      const bLabel = { sale: 'For Sale', rent: 'For Rent', pre: 'Pre-Selling' };
+      const feats = [];
+      if (p.beds != null) feats.push(`<span class="p-feat"><span class="p-feat-icon">🛏</span>${p.beds} Bed</span>`);
+      if (p.baths != null) feats.push(`<span class="p-feat"><span class="p-feat-icon">🚿</span>${p.baths} Bath</span>`);
+      feats.push(`<span class="p-feat"><span class="p-feat-icon">📐</span>${p.area}m²</span>`);
+      const fav = favs.has(p.id) ? 'on' : '';
+      return `<div class="prop-card" data-badge="${p.badge}" data-type="${p.type.toLowerCase()}" onclick="openProp(${p.id})" tabindex="0" role="button" aria-label="View ${p.name}">
+    <div class="prop-card-img">
       <img src="${p.img}" alt="${p.name}" loading="lazy">
-      <div class="property-badge ${badgeMap[p.badge]||'badge-sale'}">${badgeLabel[p.badge]||'For Sale'}</div>
-      <button class="property-fav ${favActive}" onclick="event.stopPropagation();toggleFav(${p.id},this)" aria-label="Save to favorites">${favIcon}</button>
+      <div class="prop-img-overlay"></div>
+      <span class="prop-status ${bMap[p.badge] || 'status-sale'}">${bLabel[p.badge]}</span>
+      <button class="prop-fav ${fav}" onclick="event.stopPropagation();toggleFav(${p.id},this)" aria-label="Save">${favs.has(p.id) ? '❤️' : '🤍'}</button>
+      <div class="prop-price-overlay">
+        <div><div class="prop-price-big">${p.price}</div></div>
+      </div>
     </div>
-    <div class="property-body">
-      <p class="property-type">${p.type}</p>
-      <h3 class="property-name">${p.name}</h3>
-      <p class="property-loc">📍 ${p.loc}</p>
-      <p class="property-price">${p.price}</p>
-      <div class="property-features">${feats.join('')}</div>
+    <div class="prop-body">
+      <p class="prop-type">${p.type}</p>
+      <h3 class="prop-name">${p.name}</h3>
+      <p class="prop-loc">📍 ${p.loc}</p>
+      <div class="prop-feats">${feats.join('')}</div>
     </div>
   </div>`;
-}
+    }
+    function renderProps(filter = 'all') {
+      const g = document.getElementById('propsGrid');
+      const list = filter === 'all' ? PROPS : PROPS.filter(p => {
+        if (['sale', 'rent', 'pre'].includes(filter)) return p.badge === filter;
+        if (filter === 'house') return p.type.toLowerCase().includes('house');
+        if (filter === 'condo') return p.type.toLowerCase().includes('condo');
+        if (filter === 'lot') return p.type.toLowerCase().includes('lot');
+        return true;
+      });
+      g.innerHTML = list.length ? list.map(makeCard).join('') : '<p style="color:var(--text-3);grid-column:1/-1;text-align:center;padding:40px">No properties found.</p>';
+      initTilt();
+    }
+    function filterProps(btn, type) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on'); renderProps(type);
+    }
+    function toggleFav(id, btn, fromModal = false) {
+      const pid = fromModal ? curProp : id;
+      if (!pid) return;
+      if (favs.has(pid)) { favs.delete(pid); if (btn) btn.textContent = '🤍'; if (btn) btn.classList.remove('on'); }
+      else { favs.add(pid); if (btn) btn.textContent = '❤️'; if (btn) btn.classList.add('on'); toast('❤️ Saved to favorites!'); }
+      if (fromModal) { document.getElementById('mFavBtn').textContent = favs.has(pid) ? '❤️' : '🤍'; }
+      renderProps();
+    }
+    function openProp(id) {
+      const p = PROPS.find(x => x.id === id); if (!p) return;
+      curProp = id;
+      document.getElementById('mImg').src = p.img; document.getElementById('mImg').alt = p.name;
+      document.getElementById('mType').textContent = p.type;
+      document.getElementById('mName').textContent = p.name;
+      document.getElementById('mLoc').textContent = '📍 ' + p.loc;
+      const bMap = { sale: 'status-sale', rent: 'status-rent', pre: 'status-pre' };
+      const bLabel = { sale: 'For Sale', rent: 'For Rent', pre: 'Pre-Selling' };
+      document.getElementById('mBadges').innerHTML = `<span class="prop-status ${bMap[p.badge]}">${bLabel[p.badge]}</span>`;
+      document.getElementById('mPrice').innerHTML = p.price + (p.badge === 'rent' ? '<span> per month</span>' : '');
+      const stats = [];
+      if (p.beds != null) stats.push(`<div class="m-stat"><div class="num">${p.beds}</div><div class="lbl">Bedrooms</div></div>`);
+      if (p.baths != null) stats.push(`<div class="m-stat"><div class="num">${p.baths}</div><div class="lbl">Bathrooms</div></div>`);
+      stats.push(`<div class="m-stat"><div class="num">${p.area}m²</div><div class="lbl">Floor Area</div></div>`);
+      if (p.lot) stats.push(`<div class="m-stat"><div class="num">${p.lot}m²</div><div class="lbl">Lot Area</div></div>`);
+      document.getElementById('mStats').innerHTML = stats.join('');
+      document.getElementById('mDesc').textContent = p.desc;
+      document.getElementById('mFavBtn').textContent = favs.has(id) ? '❤️' : '🤍';
+      if (p.amenities && p.amenities.length) {
+        document.getElementById('mAmenities').innerHTML = p.amenities.map(a => `<span class="amenity">✓ ${a}</span>`).join('');
+      } else { document.getElementById('mAmenities').innerHTML = ''; }
+      openModal('propModal');
+    }
 
-function renderProperties(filter='all'){
-  const grid = document.getElementById('propertiesGrid');
-  const filtered = filter === 'all' ? properties : properties.filter(p => {
-    if(['sale','rent','pre','sold'].includes(filter)) return p.badge === filter;
-    if(filter === 'house') return p.type.toLowerCase().includes('house');
-    if(filter === 'condo') return p.type.toLowerCase().includes('condo');
-    if(filter === 'lot') return p.type.toLowerCase().includes('lot');
-    if(filter === 'commercial') return p.type.toLowerCase().includes('commercial');
-    return true;
-  });
-  grid.innerHTML = filtered.length ? filtered.map(createCard).join('') : '<p style="color:var(--text-muted);grid-column:1/-1;text-align:center;padding:40px">No properties found for this filter.</p>';
-}
+    /* ── 3D TILT EFFECT ── */
+    function initTilt() {
+      document.querySelectorAll('.prop-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect();
+          const x = e.clientX - r.left, y = e.clientY - r.top;
+          const cx = r.width / 2, cy = r.height / 2;
+          const rotX = ((y - cy) / cy) * -5;
+          const rotY = ((x - cx) / cx) * 5;
+          card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
+      });
+    }
 
-function filterProp(e, type){
-  e.preventDefault();
-  document.querySelectorAll('.filter-tag').forEach(t=>t.classList.remove('active'));
-  e.target.classList.add('active');
-  renderProperties(type);
-}
+    /* ── SCROLL REVEAL ── */
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') });
+    }, { threshold: .12 });
+    function initReveal() { document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el)); }
 
-function toggleFav(id, btn){
-  if(favorites.has(id)){favorites.delete(id);btn.textContent='🤍';btn.classList.remove('active')}
-  else{favorites.add(id);btn.textContent='❤️';btn.classList.add('active');showToast('❤️ Saved to favorites!')}
-}
+    /* ── COUNTER ANIMATION ── */
+    function animateCounters() {
+      document.querySelectorAll('[data-target]').forEach(el => {
+        const target = +el.dataset.target, suffix = el.dataset.suffix || '', dur = 1800;
+        let start = null;
+        const step = ts => {
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / dur, 1);
+          const ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(ease * target) + (p >= 1 ? suffix : '');
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    }
+    const statsObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) { animateCounters(); statsObs.disconnect(); }
+    }, { threshold: .4 });
+    const statsEl = document.querySelector('.stats-inner');
+    if (statsEl) statsObs.observe(statsEl);
 
-function openPropModal(id){
-  const p = properties.find(x=>x.id===id);
-  if(!p) return;
-  currentPropId = id;
-  document.getElementById('modalImg').src = p.img;
-  document.getElementById('modalImg').alt = p.name;
-  document.getElementById('modalType').textContent = p.type;
-  document.getElementById('modalName').textContent = p.name;
-  document.getElementById('modalLoc').textContent = '📍 ' + p.loc;
-  document.getElementById('modalPrice').innerHTML = p.price + (p.badge==='rent'?'<span> per month</span>':'');
-  document.getElementById('modalDesc').textContent = p.desc;
-  const badgeMap = {sale:'badge-sale',rent:'badge-rent',pre:'badge-pre'};
-  const badgeLabel = {sale:'For Sale',rent:'For Rent',pre:'Pre-Selling'};
-  document.getElementById('modalBadges').innerHTML = `<span class="property-badge ${badgeMap[p.badge]||'badge-sale'}">${badgeLabel[p.badge]||'For Sale'}</span>`;
-  const feats = [];
-  if(p.beds!==null) feats.push(`<div class="modal-feat"><span class="feat-num">${p.beds}</span><span class="feat-label">Bedrooms</span></div>`);
-  if(p.baths!==null) feats.push(`<div class="modal-feat"><span class="feat-num">${p.baths}</span><span class="feat-label">Bathrooms</span></div>`);
-  feats.push(`<div class="modal-feat"><span class="feat-num">${p.area}</span><span class="feat-label">Floor (m²)</span></div>`);
-  if(p.lot) feats.push(`<div class="modal-feat"><span class="feat-num">${p.lot}</span><span class="feat-label">Lot (m²)</span></div>`);
-  document.getElementById('modalFeatures').innerHTML = feats.join('');
-  if(p.amenities && p.amenities.length){
-    document.getElementById('modalAmenities').innerHTML = `<h4>Amenities & Features</h4><div class="amenities-list">${p.amenities.map(a=>`<span class="amenity-pill">✓ ${a}</span>`).join('')}</div>`;
-  } else { document.getElementById('modalAmenities').innerHTML = ''; }
-  const favBtn = document.getElementById('modalFavBtn');
-  favBtn.textContent = favorites.has(id) ? '❤️' : '🤍';
-  document.getElementById('propModal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
+    /* ── NAV SCROLL ── */
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('nav');
+      if (scrollY > 80) { nav.classList.remove('dark'); } else { nav.classList.add('dark'); }
+      document.getElementById('backBtn').classList.toggle('show', scrollY > 400);
+    });
 
-function toggleModalFav(){
-  const btn = document.getElementById('modalFavBtn');
-  if(favorites.has(currentPropId)){favorites.delete(currentPropId);btn.textContent='🤍'}
-  else{favorites.add(currentPropId);btn.textContent='❤️';showToast('❤️ Saved to favorites!')}
-  renderProperties();
-}
+    /* ── MODALS ── */
+    function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+    function openAuth() { openModal('authModal'); }
+    document.querySelectorAll('.modal-overlay').forEach(o => o.addEventListener('click', function (e) { if (e.target === this) closeModal(this.id); }));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id)); });
 
-function shareProperty(){
-  if(navigator.share){ navigator.share({title:'Check this property!',url:window.location.href}) }
-  else{ navigator.clipboard.writeText(window.location.href);showToast('🔗 Link copied!') }
-}
+    /* ── AUTH ── */
+    function switchTab(e, f) {
+      document.querySelectorAll('.a-tab').forEach(t => t.classList.remove('on'));
+      e.target.classList.add('on');
+      document.getElementById('lf').style.display = f === 'lf' ? 'block' : 'none';
+      document.getElementById('rf').style.display = f === 'rf' ? 'block' : 'none';
+    }
+    function fakeLogin() { closeModal('authModal'); toast('👋 Welcome back! You are now signed in.'); }
 
-function closeModal(id){
-  document.getElementById(id).classList.remove('active');
-  document.body.style.overflow = '';
-}
+    /* ── LEAD FORM ── */
+    function submitLead() {
+      const fn = document.getElementById('fn').value.trim(), ph = document.getElementById('ph').value.trim(), sv = document.getElementById('sv').value, mg = document.getElementById('mg').value.trim();
+      if (!fn || !ph || !sv || !mg) { toast('⚠️ Please fill in all required fields.'); return; }
+      toast('✅ Inquiry sent! We\'ll contact you within 24 hours.');
+      ['fn', 'ln', 'em', 'ph', 'mg'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+      document.getElementById('sv').value = '';
+    }
 
-document.querySelectorAll('.modal-overlay').forEach(el => {
-  el.addEventListener('click', function(e){ if(e.target === this) closeModal(this.id); });
-});
-document.addEventListener('keydown', e => { if(e.key==='Escape') { closeModal('propModal');closeModal('authModal'); } });
+    /* ── FAQ ── */
+    function toggleFaq(item) {
+      const was = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!was) item.classList.add('open');
+    }
 
-function openAuth(){ document.getElementById('authModal').classList.add('active'); document.body.style.overflow='hidden'; }
+    /* ── TOAST ── */
+    let tT;
+    function toast(msg) {
+      clearTimeout(tT);
+      const el = document.getElementById('toastEl');
+      document.getElementById('toastMsg').textContent = msg;
+      el.classList.add('show');
+      tT = setTimeout(() => el.classList.remove('show'), 4000);
+    }
 
-function switchTab(tab){
-  document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('active'));
-  event.target.classList.add('active');
-  document.getElementById('loginForm').style.display = tab==='login'?'block':'none';
-  document.getElementById('registerForm').style.display = tab==='register'?'block':'none';
-}
+    /* ── MOBILE NAV ── */
+    function toggleNav() { document.getElementById('mobNav').classList.toggle('open'); }
+    function closeNav() { document.getElementById('mobNav').classList.remove('open'); }
 
-function fakeLogin(){ closeModal('authModal'); showToast('👋 Welcome! You are now signed in.'); }
-
-function submitInquiry(){
-  const name = document.getElementById('fname').value.trim();
-  if(!name){ showToast('⚠️ Please enter your name'); return; }
-  showToast('✅ Inquiry sent! We\'ll contact you soon.');
-  ['fname','lname','email','phone','message'].forEach(id=>document.getElementById(id).value='');
-}
-
-let toastTimer;
-function showToast(msg){
-  clearTimeout(toastTimer);
-  const t = document.getElementById('toast');
-  document.getElementById('toastMsg').textContent = msg;
-  t.classList.add('show');
-  toastTimer = setTimeout(()=>t.classList.remove('show'), 3200);
-}
-
-function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
-function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
-
-window.addEventListener('scroll',()=>{
-  const nav = document.getElementById('navbar');
-  const bt = document.getElementById('backTop');
-  nav.style.background = window.scrollY>60 ? 'rgba(13,27,42,0.98)' : 'rgba(13,27,42,0.96)';
-  bt.classList.toggle('show', window.scrollY > 400);
-});
-
-renderProperties();
-</script>
+    /* ── INIT ── */
+    renderProps();
+    initReveal();
+  </script>
 </body>
+
 </html>
